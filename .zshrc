@@ -2,9 +2,12 @@ export GOPATH=~/Development/go
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export JAVA_HOME=`/usr/libexec/java_home`
 export TZ="America/Los_Angeles"
+export SIDEKIQ_WORKERS=10
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -82,4 +85,10 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 alias git=hub
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(jenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
 
