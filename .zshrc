@@ -24,9 +24,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-eval "$(jenv init -)"
 
-alias git=hub
 alias be="bundle exec"
 alias bef="bundle exec foreman start"
 alias ber="bundle exec rails"
