@@ -11,7 +11,9 @@ export EDITOR='vim'
 export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-export PATH=$HOME/bin:/usr/local/share/npm/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:$GOPATH/bin:$PATH
+export PATH=$HOME/bin:/usr/local/share/npm/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
+export WEB_CONCURRENCY=1
+export MAX_THREADS=1
 
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
@@ -39,4 +41,7 @@ alias bekm="bundle exec rake db:migrate"
 alias bekt="bundle exec rake -T"
 alias bekcm="bundle exec rake db:create && bundle exec rake db:migrate"
 alias bekdcm="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate"
+
+alias goji-staging1="ssh -i ~/Development/gojilabs-staging.pem ubuntu@$GOJI_STAGING_1_EC2_DOMAIN"
+alias goji-chef="ssh -i ~/Development/gojilabs-chef.pem ubuntu@$GOJI_CHEF_EC2_DOMAIN"
 
