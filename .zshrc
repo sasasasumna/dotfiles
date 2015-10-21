@@ -11,9 +11,13 @@ export EDITOR='vim'
 export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-export PATH=$HOME/bin:/usr/local/share/npm/bin:~/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
+export PATH=$HOME/bin:/usr/local/share/npm/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
 export WEB_CONCURRENCY=1
-export MAX_THREADS=1
+export MAX_THREADS=2
+export RAILS_ENV=development
+export RACK_ENV=development
+export GOJI_ENV=development
+export GOJI_STAGING_1_EC2_DOMAIN=ec2-52-11-175-130.us-west-2.compute.amazonaws.com
 
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
