@@ -43,5 +43,4 @@ alias bekcm="bundle exec rake db:create && bundle exec rake db:migrate"
 alias bekdcm="bundle exec rake db:drop && bundle exec rake db:create && bundle exec rake db:migrate"
 
 alias goji-staging1="ssh -i ~/Development/gojilabs-staging.pem ubuntu@$GOJI_STAGING_1_EC2_DOMAIN"
-alias goji-chef="ssh -i ~/Development/gojilabs-chef.pem ubuntu@$GOJI_CHEF_EC2_DOMAIN"
 
