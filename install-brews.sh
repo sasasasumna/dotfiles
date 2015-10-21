@@ -2,15 +2,19 @@
 
 # for install Brew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # assuming brew, zsh, zsh-completions, zsh-syntax-highlighting already installed!
+
+brew tap homebrew/dupes
+brew tap homebrew/science
+brew tap homebrew/versions
+brew tap caskroom/cask
+brew tap caskroom/versions
+
 brew update
 
 brew install caskroom/cask/brew-cask
-brew cask install xquartz
-brew cleanup
-brew cask cleanup
+brew cask install xquartz java
 
-brew install apple-gcc42 --with-gfortran-symlink
-brew install homebrew/dupes/tcl-tk --with-x11 --with-threads
+brew install tcl-tk --with-x11 --with-threads
 brew install sqlite --with-dbstat --with-docs --with-fts --with-functions --with-icu4c --with-unlock-notify
 brew install python3 --with-tcl-tk
 brew install python --with-tcl-tk --with-berkeley-db4
@@ -32,7 +36,7 @@ brew install postgresql --with-dtrace --with-python
 brew install subversion --with-java --with-perl --with-python --with-ruby --universal
 brew install git --with-brewed-openssl --with-brewed-svn --with-blk-sha1 --with-brewed-curl --with-gettext --with-pcre --with-persistent-https
 brew install go --with-cc-all
-brew install imagemagick --with-fftw --with-fontconfig --with-ghostscript --with-hdri --with-jp2 --with-liblqr --with-librsvg --with-libwmf --with-little-cms --with-little-cms2 --with-openexr --with-openmp --with-pango --with-perl #issue on El Capitan
+brew install imagemagick --with-fftw --with-fontconfig --with-ghostscript --with-hdri --with-jp2 --with-liblqr --with-librsvg --with-libwmf --with-little-cms --with-little-cms2 --with-openexr --with-pango --with-perl
 brew install node --with-icu4c --with-openssl
 brew install homebrew/science/r --with-pango --with-x11 --with-openblas
 brew install wget --with-iri --with-pcre
@@ -44,5 +48,5 @@ brew install tomcat --with-fulldocs
 brew install erlang --with-fop --with-native-libs
 brew install nginx --with-gunzip --with-spdy --with-webdav
 
-brew install ack cvs heroku-toolbelt json-c libyaml memcached mercurial mysql redis riak rbenv ruby-build rust elixir homebrew/versions/v8-315
-brew cask install java android-studio ax88179 dropbox firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam sublime-text3 tunnelblick vagrant vagrant-manager virtualbox visual-studio-code vlc
+brew install ack cvs heroku-toolbelt json-c libyaml memcached mercurial mysql redis riak rbenv ruby-build rust elixir v8-315
+brew cask install android-studio ax88179 dropbox firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam sublime-text3 tunnelblick vagrant vagrant-manager virtualbox visual-studio-code vlc
