@@ -48,5 +48,7 @@ brew install tomcat --with-fulldocs
 brew install erlang --with-fop --with-native-libs
 brew install nginx --with-gunzip --with-spdy --with-webdav
 
-brew install ack cvs heroku-toolbelt json-c libyaml memcached mercurial mysql redis riak rbenv ruby-build rust elixir v8-315
+brew install ack cvs heroku-toolbelt json-c libyaml memcached mercurial mysql redis riak rbenv ruby-build rust elixir v8-315 uncrustify
 brew cask install android-studio ax88179 dropbox firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam sublime-text3 tunnelblick vagrant vagrant-manager virtualbox visual-studio-code vlc
+
+# gems: htmlbeautifier ruby-beautify
