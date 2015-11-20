@@ -11,7 +11,7 @@ export EDITOR='vim'
 export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-export PATH=$HOME/bin:/usr/local/share/npm/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 export WEB_CONCURRENCY=1
 export MAX_THREADS=2
 export RAILS_ENV=development
@@ -30,6 +30,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which exenv > /dev/null; then eval "$(exenv init -)"; fi
 
 alias be="bundle exec"
 alias bef="bundle exec foreman start"

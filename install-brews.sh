@@ -45,10 +45,10 @@ brew install libxml2 --with-python
 brew install llvm --with-clang --with-python
 brew install objective-caml --with-x11
 brew install tomcat --with-fulldocs
-brew install erlang --with-fop --with-native-libs
+brew install erlang --with-fop --with-native-libs --without-hipe --without-docs
 brew install nginx --with-gunzip --with-spdy --with-webdav
 
-brew install ack cvs heroku-toolbelt json-c libyaml memcached mercurial mysql redis riak rbenv ruby-build rust elixir v8-315 uncrustify
-brew cask install android-studio ax88179 dropbox firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam sublime-text3 tunnelblick vagrant vagrant-manager virtualbox visual-studio-code vlc
+brew install ack cvs exenv elixir-build heroku-toolbelt json-c libyaml memcached mercurial mysql redis riak rbenv ruby-build rust v8-315 uncrustify
+brew cask install android-studio ax88179 dropbox firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam tunnelblick vagrant vagrant-manager virtualbox visual-studio-code vlc
 
 # gems: htmlbeautifier ruby-beautify
