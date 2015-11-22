@@ -1,21 +1,26 @@
 source ~/.secrets
 
+GOJI_STAGING_1_EC2_DOMAIN=ec2-52-11-175-130.us-west-2.compute.amazonaws.com
+
 export ANDROID_HOME=/usr/local/opt/android-sdk
-export JAVA_HOME=`/usr/libexec/java_home`
-export TZ="America/Los_Angeles"
-export SIDEKIQ_WORKERS=10
-export ZSH=$HOME/.oh-my-zsh
-export LANG=en_US.UTF-8
-export EDITOR='vim'
 export ARCHFLAGS="-arch x86_64"
-export SSH_KEY_PATH="~/.ssh/id_rsa"
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-export WEB_CONCURRENCY=1
-export MAX_THREADS=2
-export RAILS_ENV=development
-export RACK_ENV=development
+export EDITOR='vim'
 export GOJI_ENV=development
-export GOJI_STAGING_1_EC2_DOMAIN=ec2-52-11-175-130.us-west-2.compute.amazonaws.com
+export JAVA_HOME=`/usr/libexec/java_home`
+export LANG=en_US.UTF-8
+export MAX_THREADS=2
+export NODENV_ROOT=/usr/local/var/nodenv
+export RACK_ENV=development
+export RAILS_ENV=development
+export RBENV_ROOT=/usr/local/var/rbenv
+export SIDEKIQ_WORKERS=10
+export SSH_KEY_PATH="~/.ssh/id_rsa"
+export TZ="America/Los_Angeles"
+export WEB_CONCURRENCY=1
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+
+export PATH="$RBENV_ROOT/shims:$NODENV_ROOT/shims:usr/local/bin:/usr/local/sbin:$PATH"
 
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
