@@ -35,20 +35,17 @@ brew install ghostscript --with-x11 --with-djvu
 brew install postgresql --with-dtrace --with-python
 brew install subversion --with-java --with-perl --with-python --with-ruby --universal
 brew install git --with-brewed-openssl --with-brewed-svn --with-blk-sha1 --with-brewed-curl --with-gettext --with-pcre --with-persistent-https
-brew install go --with-cc-all
 brew install imagemagick --with-fftw --with-fontconfig --with-ghostscript --with-hdri --with-jp2 --with-liblqr --with-librsvg --with-libwmf --with-little-cms --with-little-cms2 --with-openexr --with-pango --with-perl
-brew install node --with-icu4c --with-openssl
 brew install homebrew/science/r --with-pango --with-x11 --with-openblas
 brew install wget --with-iri --with-pcre
 brew install vim --override-system-vi --with-python3 --with-tcl --with-lua --with-luajit
 brew install libxml2 --with-python
 brew install llvm --with-clang --with-python
 brew install objective-caml --with-x11
-brew install tomcat --with-fulldocs
 brew install erlang --with-fop --with-native-libs --without-hipe --without-docs
 brew install nginx --with-gunzip --with-spdy --with-webdav
 
-brew install ack cvs exenv elixir-build heroku-toolbelt json-c libyaml memcached mercurial mysql redis riak rbenv ruby-build rust v8-315 uncrustify
+brew install ack cvs heroku-toolbelt json-c libyaml memcached mercurial mysql nodenv node-build redis riak rbenv ruby-build v8 uncrustify
 brew cask install android-studio ax88179 dropbox firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam tunnelblick vagrant vagrant-manager virtualbox visual-studio-code vlc
 
 # gems: htmlbeautifier ruby-beautify
