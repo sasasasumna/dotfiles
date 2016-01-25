@@ -8,6 +8,4 @@ echo "Installing Homebrew..."
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install zsh zsh-completions zsh-syntax-highlighting
-echo "Homebrew and ZSH setup complete."
-echo "Change your shell to /usr/local/bin/zsh, then install your brews"
-
+/usr/local/bin/zsh ~/.dotfiles/install-brews.sh
