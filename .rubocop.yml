@@ -1,0 +1,23 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+    - '**/Gemfile'
+    - '**/Bowerfile'
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+  TargetRubyVersion: 2.3
+
+Style/Encoding:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 110
+
+Rails:
+  Enabled: true
