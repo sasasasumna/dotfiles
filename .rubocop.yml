@@ -5,7 +5,6 @@ AllCops:
     - '**/Gemfile'
     - '**/Bowerfile'
   Exclude:
-    - 'db/schema.rb'
     - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'
@@ -16,8 +15,9 @@ AllCops:
 Style/Encoding:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 110
-
 Rails:
   Enabled: true
+
+Metrics/LineLength:
+  Enabled: false
+

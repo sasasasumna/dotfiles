@@ -15,7 +15,7 @@ export RACK_ENV=development
 export RAILS_ENV=development
 export TZ="America/Los_Angeles"
 export WEB_CONCURRENCY=1
-export SIDEKIQ_WORKERS=10
+export GOPATH="~/Development/golang"
 
 # System options
 export ARCHFLAGS="-arch x86_64"

@@ -39,5 +39,5 @@ brew install erlang --with-fop --with-native-libs --without-hipe --without-docs
 brew install nginx --with-gunzip --with-spdy --with-webdav
 
 brew install ack cassandra cvs heroku-toolbelt json-c libyaml memcached mercurial mysql postgresql redis riak v8
-brew cask install android-studio ax88179 firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam sublime-text3 tunnelblick vlc
+brew cask install android-studio atom ax88179 firefox gimp google-chrome google-drive google-earth google-earth-web-plugin google-hangouts inkscape hipchat iterm2 psequel skype slack steam tunnelblick vlc
 

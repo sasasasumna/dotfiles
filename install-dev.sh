@@ -15,7 +15,7 @@ gem update --system
 gem update
 rbenv rehash
 gem clean
-gem install bundler
+gem install bundler rsense rubocop reek
 rbenv rehash
 
 brew install nodenv node-build
@@ -25,7 +25,7 @@ nodenv rehash
 nodenv global $NODE
 npm -g update
 nodenv rehash
-npm -g install bower
+npm -g install bower webpack eslint jsonlint babel-eslint typescript dockerlint
 nodenv rehash
 
 brew install exenv elixir-build
@@ -40,3 +40,4 @@ pyenv install $PYTHON2
 pyenv install $PYTHON3
 pyenv rehash
 pyenv global $PYTHON2
+
