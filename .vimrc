@@ -19,12 +19,12 @@ set sm
 set virtualedit=onemore
 set hlsearch
 set incsearch
-set ruler
 set nocompatible
 set bs=2
-set noautoindent
 set nosmartindent
 set nocindent
+set hidden
+set showtabline=0
 
 filetype off
 
@@ -34,33 +34,51 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
+" Ruby
 Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
-Plugin 'fweep/vim-zsh-path-completion'
+Plugin 'slim-template/vim-slim'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" Motion
+Plugin 'justinmk/vim-sneak'
+
+" Themes
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'scrooloose/syntastic'
+
+" Status line
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Fuzzy file finder
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
-Plugin 'slim-template/vim-slim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'justinmk/vim-sneak'
+
+Plugin 'fweep/vim-zsh-path-completion'
+Plugin 'tpope/vim-surround'
+
+" Linting, language-agnostic
+Plugin 'scrooloose/syntastic'
+
+" Javascript
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
+
+" Misc
+Plugin 'tpope/vim-sensible'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
 
 colorscheme jellybeans
 
-filetype plugin indent on
-
+" Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_ruby_checkers = ['rubocop', 'reek']
+let g:syntastic_ruby_checkers = ['reek', 'rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
@@ -70,7 +88,28 @@ let g:syntastic_check_on_wq = 0
 
 let g:javascript_enable_domhtmlcss = 1
 
-syntax on
+" ===============
+" CtrlP
+" ===============
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+" ===============
+" ---------------
+" ===============
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " remove trailing whitespace for only the following file extensions
 autocmd FileType c autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -100,7 +139,6 @@ autocmd FileType vim autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType zsh autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType xml autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
-
 
 if has("gui_running")
   set guioptions=
