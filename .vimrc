@@ -41,7 +41,6 @@ Plugin 'tpope/vim-rake'
 Plugin 'slim-template/vim-slim'
 
 " Git
-Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Motion
@@ -54,12 +53,10 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Fuzzy file finder
+" File finding
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rking/ag.vim'
-
 Plugin 'fweep/vim-zsh-path-completion'
-Plugin 'tpope/vim-surround'
 
 " Linting, language-agnostic
 Plugin 'scrooloose/syntastic'
@@ -76,15 +73,25 @@ call vundle#end()
 
 colorscheme jellybeans
 
+" ===============
+" Git Gutter
+" ===============
+let g:gitgutter_grep_command = 'ag --nogroup'
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
+
+" ===============
 " Syntastic
+" ===============
 let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_ruby_checkers = ['reek', 'rubocop']
+let g:syntastic_ruby_checkers = ['reek', 'rubocop', 'mri']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
 
 let g:javascript_enable_domhtmlcss = 1
 
@@ -104,14 +111,13 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-" ===============
-" ---------------
-" ===============
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" remove trailing whitespace for only the following file extensions
+" ===============
+" Remove trailing spaces
+" ===============
 autocmd FileType c autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType cpp autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -140,6 +146,9 @@ autocmd FileType zsh autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType xml autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" ===============
+" GUI-only options
+" ===============
 if has("gui_running")
   set guioptions=
   set linespace=2
