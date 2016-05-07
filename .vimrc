@@ -67,6 +67,7 @@ Plugin 'pangloss/vim-javascript'
 
 " Misc
 Plugin 'tpope/vim-sensible'
+Plugin 'lambdalisue/vim-fullscreen'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -150,9 +151,11 @@ autocmd FileType yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 " GUI-only options
 " ===============
 if has("gui_running")
+  nmap <C-CR> <Plug>(fullscreen-toggle)
   set guioptions=
   set linespace=2
   set guifont=Inconsolata:h14
+  set gfn=Inconsolata\ 14
   let g:jellybeans_use_term_italics = 1
 endif
 
