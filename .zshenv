@@ -1,26 +1,21 @@
-source ~/.secrets
-
 # SDK directories
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export EXENV_ROOT=/usr/local/var/exenv
-export JENV_ROOT=/usr/local/var/jenv
-export NODENV_ROOT=/usr/local/var/nodenv
-export PYENV_ROOT=/usr/local/var/pyenv
-export RBENV_ROOT=/usr/local/var/rbenv
+export NODENV_ROOT="$HOME/.nodenv"
+export RBENV_ROOT="$HOME/.rbenv"
+export GOPATH="$HOME/Development/golang"
 
 # Development options
-export GOJI_ENV=development
-export LANG=en_US.UTF-8
-export RACK_ENV=development
-export RAILS_ENV=development
+export GOJI_ENV="development"
+export LANG="en_US.UTF-8"
+export RACK_ENV="development"
+export RAILS_ENV="development"
 export TZ="America/Los_Angeles"
 export WEB_CONCURRENCY=1
-export GOPATH=$HOME/Development/golang
 
 # System options
 export ARCHFLAGS="-arch x86_64"
-export EDITOR=vim
-export SSH_KEY_PATH=$HOME/.ssh/id_rsa
+export EDITOR="vim"
+export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
+export ZSH="$HOME/.oh-my-zsh"
 
-export PATH="$EXENV_ROOT/shims:$JENV_ROOT/shims:$NODENV_ROOT/shims:$PYENV_ROOT/shims:$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$NODENV_ROOT/bin:$RBENV_ROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
