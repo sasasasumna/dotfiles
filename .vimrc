@@ -65,6 +65,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 
+" Autocomplete
+Plugin 'Valloric/YouCompleteMe'
+
 " Misc
 Plugin 'tpope/vim-sensible'
 Plugin 'lambdalisue/vim-fullscreen'
@@ -73,6 +76,8 @@ Plugin 'lambdalisue/vim-fullscreen'
 call vundle#end()
 
 colorscheme jellybeans
+
+let g:EclimCompletionMethod = 'omnifunc'
 
 " ===============
 " Git Gutter
