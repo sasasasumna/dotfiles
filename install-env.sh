@@ -25,6 +25,7 @@ else # assuming ubuntu
 
 fi
 
+# the following should be run in a ZSH environment after .zshrc and .zshenv have been source'd
 USER=`whoami`
 sudo su -c "createuser -s $USER" postgres
 
@@ -42,7 +43,11 @@ rbenv rehash
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 rbenv rehash
-gem install bundler rsense rubocop reek
+gem update --system
+rbenv rehash
+gem install bundler rsense rubocop reek slim_lint
+gem update
+gem clean
 rbenv rehash
 
 echo "Setting up NodeJS $NODE_VERSION..."
