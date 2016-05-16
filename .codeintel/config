@@ -1,0 +1,17 @@
+{
+    "JavaScript": {
+        "javascriptExtraPaths": []
+    },
+    "Ruby": {
+        "ruby": "$RBENV_ROOT/shims",
+        "rubyExtraPaths": []
+    },
+    "Python": {
+        "python": '/usr/local/bin/python',
+        "pythonExtraPaths": []
+    },
+    "Python3": {
+        "python": '/usr/local/bin/python3',
+        "pythonExtraPaths": []
+    }
+}

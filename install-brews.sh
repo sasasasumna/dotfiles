@@ -3,6 +3,11 @@
 # for install Brew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # assuming brew, zsh, zsh-completions, zsh-syntax-highlighting already installed!
 
+echo "Installing Homebrew..."
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew install zsh zsh-completions zsh-syntax-highlighting
+
 brew tap homebrew/dupes
 brew tap homebrew/science
 brew tap homebrew/versions

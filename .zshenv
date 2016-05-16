@@ -1,3 +1,6 @@
+
+export DOTFILES_DIR="$HOME/.dotfiles"
+
 # SDK directories
 export NODENV_ROOT="$HOME/.nodenv"
 export RBENV_ROOT="$HOME/.rbenv"
@@ -18,4 +21,10 @@ export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ZSH="$HOME/.oh-my-zsh"
 
 export PATH="$NODENV_ROOT/bin:$RBENV_ROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+source $DOTFILES_DIR/.aliases
+source $HOME/.secrets
+
+eval "$(nodenv init -)"
+eval "$(rbenv  init -)"
 

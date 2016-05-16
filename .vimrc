@@ -128,6 +128,7 @@ autocmd FileType c autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType cpp autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType javascript.jsx autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType perl autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType java autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
