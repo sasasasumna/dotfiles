@@ -1,10 +1,12 @@
 #!/bin/bash
 
+mkdir ~/.codeintel
+
 ln -sf ~/.dotfiles/.zshenv ~/.zshenv
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/.gemrc ~/.gemrc
 ln -sf ~/.dotfiles/.vimrc ~/.vimrc
-ln -sf ~/.dotfiles/.codeintel ~/.codeintel
+ln -sf ~/.dotfiles/.codeintel_config ~/.codeintel/config
 ln -sf ~/.dotfiles/.rubocopy.yml ~/.rubocopy.yml
 ln -sf ~/.dotfiles/.eslintrc.yml ~/.eslintrc.yml
 
