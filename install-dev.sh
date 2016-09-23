@@ -31,6 +31,6 @@ nodenv rehash
 nodenv global $NODE
 npm -g update
 nodenv rehash
-npm -g install bower webpack eslint jsonlint babel-eslint typescript dockerlint eslint-plugin-react
+npm -g install bower webpack eslint jsonlint babel-eslint typescript eslint-plugin-react tslint typings
 nodenv rehash
 
