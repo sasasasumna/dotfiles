@@ -5,6 +5,7 @@ export DOTFILES_DIR="$HOME/.dotfiles"
 export NODENV_ROOT="$HOME/.nodenv"
 export RBENV_ROOT="$HOME/.rbenv"
 export GOPATH="$HOME/Development/golang"
+export ANDROID_HOME="/usr/local/opt/android-sdk"
 
 # Development options
 export GOJI_ENV="development"
