@@ -34,26 +34,21 @@ git clone git://github.com/rbenv/ruby-build $RBENV_ROOT/plugins/ruby-build
 git clone git://github.com/tpope/rbenv-ctags $RBENV_ROOT/plugins/rbenv-ctags
 git clone git://github.com/rkh/rbenv-update $RBENV_ROOT/plugins/rbenv-update
 git clone git://github.com/rbenv/rbenv-vars $RBENV_ROOT/plugins/rbenv-vars
+git clone git://github.com/rbenv/rbenv-gem-rehash $RBENV_ROOT/plugins/rbenv-gem-rehash
 git clone git://github.com/nodenv/nodenv $NODENV_ROOT
 git clone git://github.com/nodenv/node-build $NODENV_ROOT/plugins/node-build
 git clone git://github.com/nodenv/nodenv-update $NODENV_ROOT/plugins/nodenv-update
+git clone git://github.com/nodenv/nodenv-package-rehash $NODENV_ROOT/plugins/nodenv-package-rehash
 
 echo "Setting up Ruby $RUBY_VERSION..."
-rbenv rehash
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
-rbenv rehash
 gem update --system
-rbenv rehash
 gem install bundler rsense rubocop reek slim_lint
 gem update
 gem clean
-rbenv rehash
 
 echo "Setting up NodeJS $NODE_VERSION..."
-nodenv rehash
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
-nodenv rehash
-npm -g install bower eslint jsonlint babel-eslint typescript typings
-nodenv rehash
+npm -g install webpack eslint jsonlint babel-eslint typescript typings
