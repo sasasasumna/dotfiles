@@ -51,4 +51,4 @@ gem clean
 echo "Setting up NodeJS $NODE_VERSION..."
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
-npm -g install webpack eslint jsonlint babel-eslint typescript typings
+npm -g install webpack eslint jsonlint babel-eslint typescript typings eslint-plugin-react ctags pug-cli
