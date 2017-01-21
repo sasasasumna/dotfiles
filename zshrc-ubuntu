@@ -1,7 +1,5 @@
 export ZSH_HIGHLIGHT_DIR="/usr/share/zsh-syntax-highlighting"
 
-source $DOTFILES_DIR/.zshrc-common
+source $DOTFILES_DIR/zshrc-common
 
-
-### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
