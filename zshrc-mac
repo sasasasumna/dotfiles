@@ -1,5 +1,5 @@
 export ZSH_HIGHLIGHT_DIR="/usr/local/share/zsh-syntax-highlighting"
-source $DOTFILES_DIR/.zshrc-common
+source $DOTFILES_DIR/zshrc-common
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
