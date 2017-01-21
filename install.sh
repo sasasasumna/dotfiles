@@ -9,6 +9,7 @@ ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/.dotfiles/eslintrc.yml ~/.eslintrc.yml
 ln -sf ~/.dotfiles/railsrc ~/.railsrc
 ln -sf ~/.dotfiles/irbrc ~/.irbrc
+ln -sf ~/.dotfiles/pryrc ~/.pryrc
 ln -sf ~/.dotfiles/tmux.conf ~/tmux.conf
 
 touch ~/.secrets
@@ -71,7 +72,7 @@ rbenv global $RUBY_VERSION
 
 echo "Installing gems..."
 gem update --system
-gem install awesome_print bundler rubocop reek slim_lint haml_lint ctags.rb rake
+gem install spirit_hands bundler rubocop reek slim_lint haml_lint ctags.rb rake
 gem update
 gem clean
 
