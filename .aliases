@@ -1,6 +1,7 @@
 # Ruby development aliases
-alias bep="be puma -C config/puma.rb"
 alias be="bundle exec"
+alias bep="be puma -C config/puma.rb"
+alias beps="ENABLE_RAILS_SSL_IN_DEVELOPMENT=true bep"
 alias ber="be rails"
 alias bern="ber new"
 alias berg="ber g"
