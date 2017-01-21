@@ -64,9 +64,6 @@ fi
 ln -sf $ZSHRC_PATH ~/.zshrc
 chsh -s "$(which zsh)"
 
-echo 'Setting up postgres user...'
-sudo su -c "createuser -s `whoami`" postgres
-
 RUBY_VERSION=`echo -n "$(head -1 ruby-version)"`
 echo "Installing Ruby ${RUBY_VERSION}..."
 rbenv install $RUBY_VERSION
