@@ -11,6 +11,8 @@ ln -sf ~/.dotfiles/railsrc ~/.railsrc
 ln -sf ~/.dotfiles/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/pryrc ~/.pryrc
 ln -sf ~/.dotfiles/tmux.conf ~/tmux.conf
+mkdir ~/.bundle
+ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
 
 touch ~/.secrets
 source ~/.zshenv
