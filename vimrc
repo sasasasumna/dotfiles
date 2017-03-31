@@ -27,8 +27,8 @@ set hidden
 set showtabline=0
 set termguicolors
 
-
-filetype off
+syntax on
+filetype on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -167,4 +167,10 @@ if has("gui_running")
   set gfn=Inconsolata\ 14
   let g:jellybeans_use_term_italics = 1
 endif
+
+" ===============
+" File extension / type associations
+" ===============
+au BufNewFile,BufRead *.es6 set filetype=javascript
+au BufNewFile,BufRead *.dump set filetype=sql
 
