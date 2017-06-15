@@ -2,5 +2,7 @@ export ZSH_HIGHLIGHT_DIR="/usr/local/share/zsh-syntax-highlighting"
 source $DOTFILES_DIR/zshrc-common
 export PATH="/usr/local/opt/qt5/bin:${PATH}"
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
