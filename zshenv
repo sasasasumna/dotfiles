@@ -31,3 +31,12 @@ export PATH="./bin:$GO_PROJECTS/bin:$GO_PACKAGES/bin:$PATH"
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
 
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+  export SSH_AGENT_PID
+elif [ -s "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
+  export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+fi
+export GPG_TTY=$(tty)
