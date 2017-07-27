@@ -169,25 +169,26 @@ autocmd FileType xml autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd FileType yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " ===============
-" GUI-only options
+" GUI options
 " ===============
-if has("gui_running")
-  nmap <C-CR> <Plug>(fullscreen-toggle)
-  set termguicolors
-  set guioptions=
-  set linespace=2
-  set guifont=Inconsolata:h14
-  set gfn=Inconsolata\ 14
-
-  if &t_Co >= 256
-    let g:jellybeans_use_term_italics = 1
-    colorscheme jellybeans
-  endif
-endif
+let g:jellybeans_use_term_italics = 1
+colorscheme jellybeans
+nmap <C-CR> <Plug>(fullscreen-toggle)
+set termguicolors
+set guioptions=
+set linespace=2
+set guifont=Inconsolata:h14
+set gfn=Inconsolata\ 14
 
 " ===============
 " File extension / type associations
 " ===============
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.dump set filetype=sql
+
+" ===============
+" Neomake Linters
+" ===============
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
 
