@@ -1,0 +1,8 @@
+bundler
+ctags.rb
+haml_lint
+rake
+reek
+rubocop
+slim_lint
+spirit_hands

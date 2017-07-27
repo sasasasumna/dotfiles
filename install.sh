@@ -72,15 +72,9 @@ echo "Installing Ruby ${RUBY_VERSION}..."
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 
-echo "Installing gems..."
-gem update --system
-gem install spirit_hands bundler rubocop reek slim_lint haml_lint ctags.rb rake
-gem update
-gem clean
-
-echo "Setting up npm packages..."
-npm -g update
-npm -g install webpack eslint jsonlint babel-eslint typescript typings eslint-plugin-react ctags
+source ~/.dotfiles/aliases
+_gempackages
+_npmpackages
 
 echo "!!!!"
 echo "DONE"
