@@ -34,6 +34,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
 Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
 
 " File finding
 Plugin 'ctrlpvim/ctrlp.vim'
