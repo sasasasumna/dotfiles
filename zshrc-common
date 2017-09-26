@@ -1,9 +1,10 @@
 source $HOME/.zshenv
 
-ZSH_THEME="honukai"
+ZSH_THEME="clean"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
+export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh

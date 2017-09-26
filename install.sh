@@ -54,14 +54,14 @@ fi
 
 if command -v rbenv > /dev/null; then
   echo 'rbenv detected, skipping installation...'
+elif command -v sw_vers > /dev/null; then
+  echo 'Skipping rbenv setup, brew did that for us'
 else
   echo 'Setting up rbenv...'
   git clone git@github.com:rbenv/rbenv $RBENV_ROOT
   git clone git@github.com:rbenv/ruby-build $RBENV_ROOT/plugins/ruby-build
   git clone git@github.com:tpope/rbenv-ctags $RBENV_ROOT/plugins/rbenv-ctags
   git clone git@github.com:rkh/rbenv-update $RBENV_ROOT/plugins/rbenv-update
-  git clone git@github.com:rbenv/rbenv-vars $RBENV_ROOT/plugins/rbenv-vars
-  git clone git@github.com:rbenv/rbenv-gem-rehash $RBENV_ROOT/plugins/rbenv-gem-rehash
 fi
 
 ln -sf $ZSHRC_PATH ~/.zshrc
