@@ -61,7 +61,6 @@ else
   git clone git@github.com:rbenv/rbenv $RBENV_ROOT
   git clone git@github.com:rbenv/ruby-build $RBENV_ROOT/plugins/ruby-build
   git clone git@github.com:tpope/rbenv-ctags $RBENV_ROOT/plugins/rbenv-ctags
-  git clone git@github.com:rkh/rbenv-update $RBENV_ROOT/plugins/rbenv-update
 fi
 
 ln -sf $ZSHRC_PATH ~/.zshrc

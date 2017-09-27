@@ -21,5 +21,5 @@ alias bekdcms="bekd && bekcms"
 alias _brewpackages="brew update && brew upgrade && brew cleanup && brew cask cleanup"
 alias _npmpackages="npm install -g `echo $(cat ~/.dotfiles/npm-base)` && npm -g update"
 alias _gempackages="gem update --system && gem install `echo $(cat ~/.dotfiles/gem-base)` --conservative && gem update"
-alias update_all="_brewpackages && _npmpackages && rbenv update && _gempackages"
+alias update_all="_brewpackages && _npmpackages && _gempackages"
 
