@@ -2,3 +2,5 @@
   name = Adam Sumner
   email = adamsumner@gmail.com
 
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
