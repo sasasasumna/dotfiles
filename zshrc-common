@@ -9,8 +9,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 source $ZSH_HIGHLIGHT_DIR/zsh-syntax-highlighting.zsh
 
-export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-
 if command -v device > /dev/null; then
   export DEVICE_UUID="$(device id)"
   export DEVICE_SECRET="$(device secret)"

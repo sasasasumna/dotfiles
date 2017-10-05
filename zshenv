@@ -6,6 +6,7 @@ export RBENV_ROOT="$HOME/.rbenv"
 GO_PACKAGES="/usr/local/opt/go/packages"
 GO_PROJECTS="$DEVELOPMENT_DIR/golang"
 export GOPATH="$GO_PACKAGES:$GO_PROJECTS"
+export PYENV_ROOT="$HOME/.pyenv"
 
 # Development options
 export GOJI_ENV="development"
@@ -19,24 +20,19 @@ export ARCHFLAGS="-arch x86_64"
 export EDITOR="vim"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ZSH="$HOME/.oh-my-zsh"
+export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+export GPG_TTY=$(tty)
 
-export PATH="$RBENV_ROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH:$GOROOT/libexec/bin:$GOROOT/bin"
+export PATH="./bin:$GO_PROJECTS/bin:$GO_PACKAGES/bin:/usr/local/bin:/usr/local/sbin:$PATH:$GOROOT/libexec/bin:$GOROOT/bin"
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-export PATH="./bin:$GO_PROJECTS/bin:$GO_PACKAGES/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-  export SSH_AGENT_PID
-elif [ -s "${HOME}/.gnupg/S.gpg-agent.ssh" ]; then
-  export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
-fi
-export GPG_TTY=$(tty)
