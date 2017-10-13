@@ -3,6 +3,8 @@ export ANDROID_HOME="${HOME}/Library/Android/sdk"
 source $DOTFILES_DIR/zshrc-common
 export PATH="/usr/local/opt/qt5/bin:${PATH}"
 
+/usr/local/MacGPG2/bin/gpgconf --launch gpg-agent
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
