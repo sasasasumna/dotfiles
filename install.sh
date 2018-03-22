@@ -1,18 +1,24 @@
 #!/bin/bash
 
 echo 'Making symlinks...'
-ln -sf ~/.dotfiles/zshenv ~/.zshenv
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/gemrc ~/.gemrc
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
+mkdir ~/.bundle
+
+ln -sf ~/.dotfiles/aliases ~/.aliases
+ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
 ln -sf ~/.dotfiles/eslintrc.yml ~/.eslintrc.yml
-ln -sf ~/.dotfiles/railsrc ~/.railsrc
+ln -sf ~/.dotfiles/fonts.conf ~/fonts.conf
+ln -sf ~/.dotfiles/gpg.conf ~/gpg.conf
+ln -sf ~/.dotfiles/gpg-agent.conf ~/gpg-agent.conf
+ln -sf ~/.dotfiles/gemrc ~/.gemrc
+ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/pryrc ~/.pryrc
+ln -sf ~/.dotfiles/railsrc ~/.railsrc
+ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
+ln -sf ~/.dotfiles/ruby-version ~/.ruby-version
 ln -sf ~/.dotfiles/tmux.conf ~/tmux.conf
-mkdir ~/.bundle
-ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
+ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/zshenv ~/.zshenv
 
 touch ~/.secrets
 source ~/.zshenv
