@@ -77,6 +77,9 @@ echo "Installing Ruby ${RUBY_VERSION}..."
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
 
+echo "Installing delve for go debugging"
+go get -u github.com/derekparker/delve/cmd/dlv
+
 source ~/.dotfiles/aliases
 _gempackages
 _npmpackages
