@@ -16,6 +16,7 @@ ln -sf ~/.dotfiles/pryrc ~/.pryrc
 ln -sf ~/.dotfiles/railsrc ~/.railsrc
 ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/.dotfiles/ruby-version ~/.ruby-version
+ln -sf ~/.dotfiles/node-version ~/.node-version
 ln -sf ~/.dotfiles/tmux.conf ~/tmux.conf
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
@@ -76,6 +77,11 @@ RUBY_VERSION=`echo -n "$(head -1 ruby-version)"`
 echo "Installing Ruby ${RUBY_VERSION}..."
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
+
+NODE_VERSION=`echo -n "$(head -1 node-version)"`
+echo "Installing Node ${NODE_VERSION}..."
+nodenv install $NODE_VERSION
+nodenv global $NODE_VERSION
 
 echo "Installing delve for go debugging"
 go get -u github.com/derekparker/delve/cmd/dlv
