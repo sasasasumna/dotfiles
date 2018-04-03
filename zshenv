@@ -12,7 +12,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export GOJI_ENV="development"
 export LANG="en_US.UTF-8"
 export RACK_ENV="development"
-export RAILS_ENV="development"
+export RAILS_ENV="$RACK_ENV"
+export SERVER_ENV="$RAILS_ENV"
+export APP_ENV="$SERVER_ENV"
 export TZ="America/Los_Angeles"
 
 # System options
@@ -31,6 +33,10 @@ fi
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
+fi
+
+if command -v nodenv 1>/dev/null 2>&1; then
+  eval "$(nodenv init -)"
 fi
 
 source $DOTFILES_DIR/aliases
