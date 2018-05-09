@@ -5,6 +5,8 @@ eslint
 eslint-plugin-react
 grunt
 gulp
+heroku
+ionic
 jsonlint
 npm
 sass-lint
@@ -12,3 +14,4 @@ stylelint
 typescript
 typings
 webpack
+yarn
