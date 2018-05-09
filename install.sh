@@ -18,7 +18,6 @@ ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/.dotfiles/ruby-version ~/.ruby-version
 ln -sf ~/.dotfiles/node-version ~/.node-version
 ln -sf ~/.dotfiles/tmux.conf ~/tmux.conf
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
 
 touch ~/.secrets
@@ -58,6 +57,19 @@ else
     exit 1
   fi
 fi
+ln -sf $ZSHRC_PATH ~/.zshrc
+
+VIMRC="$VIM_CONFIG/vimrc"
+if [ -f $VIMRC ]; then
+  echo "vim has already been set up, skipping"
+else
+  echo "Setting up vim..."
+  git clone git@github.com:sasasasumna/vim.git $VIM_CONFIG
+  path=$(pwd)
+  cd $VIM_CONFIG
+  ./install.sh
+  cd $path
+fi
 
 if command -v rbenv > /dev/null; then
   echo 'rbenv detected, skipping installation...'
@@ -70,8 +82,14 @@ else
   git clone git@github.com:tpope/rbenv-ctags $RBENV_ROOT/plugins/rbenv-ctags
 fi
 
-ln -sf $ZSHRC_PATH ~/.zshrc
-chsh -s "$(which zsh)"
+ZSH_EXEC="$(which zsh)"
+if grep --quiet $ZSH_EXEC /etc/shells; then
+  echo "$ZSH_EXEC has already been added to /etc/shells"
+else
+  echo "Adding zsh to /etc/shells"
+  echo $ZSH_EXEC | sudo tee --append /etc/shells > /dev/null
+fi
+chsh -s $ZSH_EXEC
 
 RUBY_VERSION=`echo -n "$(head -1 ruby-version)"`
 echo "Installing Ruby ${RUBY_VERSION}..."
