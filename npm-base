@@ -1,3 +1,4 @@
+@angular/cli
 babel-eslint
 ctags
 coffeelint
@@ -9,8 +10,11 @@ heroku
 ionic
 jsonlint
 npm
-sass-lint
+react-native-cli
 stylelint
+tern
+tern-jsx
+tslint
 typescript
 typings
 webpack

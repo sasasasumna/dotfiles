@@ -5,4 +5,7 @@ rake
 reek
 rubocop
 slim_lint
+solargraph
 spirit_hands
+sqlint
+yard
