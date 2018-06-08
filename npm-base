@@ -16,6 +16,5 @@ tern
 tern-jsx
 tslint
 typescript
-typings
 webpack
 yarn
