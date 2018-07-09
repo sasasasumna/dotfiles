@@ -1,7 +1,7 @@
 semi: false
 printWidth: 110
 tabWidth: 2
-useTabs: true
+useTabs: false
 singleQuote: true
 bracketSpacing: true
 arrowParens: "avoid"
