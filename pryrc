@@ -1,7 +1,8 @@
 begin
-  require 'spirit_hands'
+  require 'jazz_fingers'
+  JazzFingers.setup!
 rescue LoadError => e
-  raise unless e.message =~ /.*such file.*spirit_hands/
-puts 'no SpiritHands'  
+  raise unless e.message =~ /.*such file.*jazz_fingers/
+puts 'no Jazz Fingers'  
 end
 

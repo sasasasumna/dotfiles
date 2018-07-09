@@ -19,6 +19,7 @@ ln -sf ~/.dotfiles/ruby-version ~/.ruby-version
 ln -sf ~/.dotfiles/node-version ~/.node-version
 ln -sf ~/.dotfiles/tmux.conf ~/tmux.conf
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
+ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 
 touch ~/.secrets
 source ~/.zshenv
