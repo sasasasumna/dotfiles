@@ -1,0 +1,1 @@
+app-admin/rsyslog curl dbi elasticsearch gcrypt grok jemalloc kafka kerberos kubernetes mdblookup mongodb mysql normalize omhttpfs omudpspoof postgres rabbitmq redis relp rfc3195 rfc5424hmac snmp usertools uuid xxhash zeromq

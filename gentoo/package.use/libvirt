@@ -1,0 +1,1 @@
+app-emulation/libvirt apparmor firewalld iscsi libssh libvirtd lvm lxc macvtap nfs parted qemu uml virt-network virtualbox wireshark-plugins zfs

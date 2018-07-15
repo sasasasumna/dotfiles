@@ -1,0 +1,4 @@
+rc-update add zfs-import sysinit
+rc-update add zfs-mount sysinit
+rc-update add zfs-import boot
+rc-update add zfs-mount boot
