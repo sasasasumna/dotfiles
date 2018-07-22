@@ -29,6 +29,7 @@ if [ -f $ZSH/oh-my-zsh.sh ]; then
 else
   echo 'Installing oh-my-zsh...'
   git clone git@github.com:robbyrussell/oh-my-zsh $ZSH
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:$ZSH/custom}/plugins/zsh-syntax-highlighting
 fi
 
 ZSHRC_PATH=$DOTFILES_DIR/zshrc-ubuntu

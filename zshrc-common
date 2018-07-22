@@ -4,10 +4,9 @@ ZSH_THEME="clean"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH_HIGHLIGHT_DIR/zsh-syntax-highlighting.zsh
 
 if command -v device > /dev/null; then
   export DEVICE_UUID="$(device id)"
