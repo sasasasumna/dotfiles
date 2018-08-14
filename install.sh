@@ -17,7 +17,6 @@ ln -sf ~/.dotfiles/railsrc ~/.railsrc
 ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/.dotfiles/ruby-version ~/.ruby-version
 ln -sf ~/.dotfiles/node-version ~/.node-version
-ln -sf ~/.dotfiles/tmux.conf ~/tmux.conf
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 
@@ -73,7 +72,11 @@ else
   cd $path
 fi
 
-if command -v rbenv > /dev/null; then
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+
+if command -v $RBENV_ROOT/bin/rbenv > /dev/null; then
   echo 'rbenv detected, skipping installation...'
 elif command -v sw_vers > /dev/null; then
   echo 'Skipping rbenv setup, brew did that for us'
@@ -82,6 +85,14 @@ else
   git clone git@github.com:rbenv/rbenv $RBENV_ROOT
   git clone git@github.com:rbenv/ruby-build $RBENV_ROOT/plugins/ruby-build
   git clone git@github.com:tpope/rbenv-ctags $RBENV_ROOT/plugins/rbenv-ctags
+fi
+
+if command -v $NODENV_ROOT/bin/nodenv > /dev/null; then
+  echo 'nodenv detected, skipping installation...'
+else
+  echo 'Setting up nodenv...'
+  git clone https://github.com/nodenv/nodenv $NODENV_ROOT
+  git clone https://github.com/nodenv/node-build.git $NODENV_ROOT/plugins/node-build
 fi
 
 ZSH_EXEC="$(which zsh)"
