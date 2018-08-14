@@ -4,6 +4,7 @@ haml_lint
 rake
 reek
 rubocop
+scss_lint
 slim_lint
 solargraph
 spirit_hands
