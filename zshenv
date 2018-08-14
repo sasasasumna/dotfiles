@@ -5,8 +5,9 @@ export DEVELOPMENT_DIR="$HOME/Development"
 export RBENV_ROOT="$HOME/.rbenv"
 GO_PACKAGES="/usr/local/opt/go/packages"
 GO_PROJECTS="$DEVELOPMENT_DIR/golang"
-export GOPATH="$GO_PACKAGES:$GO_PROJECTS"
+export GOPATH="$GO_PROJECTS:$GO_PACKAGES"
 export PYENV_ROOT="$HOME/.pyenv"
+export NODENV_ROOT="$HOME/.nodenv"
 
 # Development options
 export GOJI_ENV="development"
@@ -26,17 +27,17 @@ export ZSH="$HOME/.oh-my-zsh"
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY=$(tty)
 
-export PATH="./bin:$GO_PROJECTS/bin:$GO_PACKAGES/bin:/usr/local/bin:/usr/local/sbin:$PATH:$GOROOT/libexec/bin:$GOROOT/bin"
+export PATH="./bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$PYENV_ROOT/bin:$GO_PROJECTS/bin:$GO_PACKAGES/bin:/usr/local/bin:/usr/local/sbin:$PATH:$GOROOT/libexec/bin:$GOROOT/bin"
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-if command -v pyenv 1>/dev/null 2>&1; then
+if command -v pyenv >/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-if command -v nodenv 1>/dev/null 2>&1; then
+if command -v nodenv >/dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
 
