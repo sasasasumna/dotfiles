@@ -2,6 +2,10 @@
 
 echo 'Making symlinks...'
 mkdir ~/.bundle
+mkdir -p ~/.bundle
+mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/plasma-workspace/env
 
 ln -sf ~/.dotfiles/aliases ~/.aliases
 ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
@@ -19,6 +23,10 @@ ln -sf ~/.dotfiles/ruby-version ~/.ruby-version
 ln -sf ~/.dotfiles/node-version ~/.node-version
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
+ln -sf ~/.dotfiles/compton.conf ~/.config/compton.conf
+ln -sf ~/.dotfiles/i3.conf ~/.config/i3/config
+ln -sf ~/.dotfiles/xprofile ~/.xprofile
+ln -sf ~/.dotfiles/i3blocks.conf ~/.i3blocks.conf
 
 touch ~/.secrets
 source ~/.zshenv
