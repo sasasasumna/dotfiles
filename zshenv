@@ -46,5 +46,5 @@ fi
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
 
-eval `keychain --eval id_rsa`
+#eval `keychain --eval id_rsa`
 
