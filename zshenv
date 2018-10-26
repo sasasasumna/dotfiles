@@ -28,6 +28,7 @@ export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY=$(tty)
 export TERMINAL=/usr/bin/kitty
 export TERM=xterm-256color
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 export PATH="./bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$PYENV_ROOT/bin:$GO_PROJECTS/bin:$GO_PACKAGES/bin:/usr/local/bin:/usr/local/sbin:$PATH:$GOROOT/libexec/bin:$GOROOT/bin"
 
