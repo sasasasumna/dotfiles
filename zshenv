@@ -3,9 +3,8 @@ export DEVELOPMENT_DIR="$HOME/Development"
 
 # SDK directories
 export RBENV_ROOT="$HOME/.rbenv"
-GO_PACKAGES="/usr/local/opt/go/packages"
-GO_PROJECTS="$DEVELOPMENT_DIR/golang"
-export GOPATH="$GO_PROJECTS:$GO_PACKAGES"
+export GOROOT="/usr/lib/go"
+export GOPATH="$DEVELOPMENT_DIR/golang"
 export PYENV_ROOT="$HOME/.pyenv"
 export NODENV_ROOT="$HOME/.nodenv"
 
@@ -30,7 +29,12 @@ export TERMINAL=/usr/bin/kitty
 export TERM=xterm-256color
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
-export PATH="./bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$PYENV_ROOT/bin:$GO_PROJECTS/bin:$GO_PACKAGES/bin:/usr/local/bin:/usr/local/sbin:$PATH:$GOROOT/libexec/bin:$GOROOT/bin"
+# Wayland
+#export CLUTTER_BACKEN=wayland
+#export QT_QPA_PLATFORM=wayland-egl
+#export SDL_VIDEODRIVER=wayland
+
+export PATH="./bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$PYENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"

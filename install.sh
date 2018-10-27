@@ -36,7 +36,7 @@ if [ -f $ZSH/oh-my-zsh.sh ]; then
   echo 'oh-my-zsh detected, skipping installation'
 else
   echo 'Installing oh-my-zsh...'
-  git clone git@github.com:robbyrussell/oh-my-zsh $ZSH
+  git clone https://github.com/robbyrussell/oh-my-zsh $ZSH
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:$ZSH/custom}/plugins/zsh-syntax-highlighting
 fi
 
@@ -56,16 +56,16 @@ if command -v sw_vers > /dev/null; then
   brew bundle
 else
   echo 'Linux detected!'
-  ln -sf ~/.dotfiles/fonts.conf ~/fonts.conf
-  if command -v apt-get > /dev/null; then
-    echo 'Installing packages with apt-get...'
-    curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-    sudo apt-get install -y nodejs postgresql postgresql-contrib libpq-dev git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev build-essential redis-server exuberant-ctags zsh zsh-syntax-highlighting
-  else
-    echo "Unknown Linux detected, this script is designed only to work with Debian-based distributions with apt-get"
-    echo "Exiting"
-    exit 1
-  fi
+#{  ln -sf ~/.dotfiles/fonts.conf ~/fonts.conf
+#{  if command -v apt-get > /dev/null; then
+#{    echo 'Installing packages with apt-get...'
+#{    curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+#{    sudo apt-get install -y nodejs postgresql postgresql-contrib libpq-dev git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev build-essential redis-server exuberant-ctags zsh zsh-syntax-highlighting
+#{  else
+#{    echo "Unknown Linux detected, this script is designed only to work with Debian-based distributions with apt-get"
+#{    echo "Exiting"
+#{    exit 1
+#{  fi
 fi
 ln -sf $ZSHRC_PATH ~/.zshrc
 
@@ -74,16 +74,16 @@ if [ -f $VIMRC ]; then
   echo "vim has already been set up, skipping"
 else
   echo "Setting up vim..."
-  git clone git@github.com:sasasasumna/vim.git $VIM_CONFIG
+  git clone https://github.com/sasasasumna/vim.git $VIM_CONFIG
   path=$(pwd)
   cd $VIM_CONFIG
   ./install.sh
   cd $path
 fi
 
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+ln -s -f ~/.tmux/.tmux.conf
+cp ~/.tmux/.tmux.conf.local ~
 
 if command -v $RBENV_ROOT/bin/rbenv > /dev/null; then
   echo 'rbenv detected, skipping installation...'
@@ -91,9 +91,9 @@ elif command -v sw_vers > /dev/null; then
   echo 'Skipping rbenv setup, brew did that for us'
 else
   echo 'Setting up rbenv...'
-  git clone git@github.com:rbenv/rbenv $RBENV_ROOT
-  git clone git@github.com:rbenv/ruby-build $RBENV_ROOT/plugins/ruby-build
-  git clone git@github.com:tpope/rbenv-ctags $RBENV_ROOT/plugins/rbenv-ctags
+  git clone https://github.com/rbenv/rbenv $RBENV_ROOT
+  git clone https://github.com/rbenv/ruby-build $RBENV_ROOT/plugins/ruby-build
+  git clone https://github.com/tpope/rbenv-ctags $RBENV_ROOT/plugins/rbenv-ctags
 fi
 
 if command -v $NODENV_ROOT/bin/nodenv > /dev/null; then
