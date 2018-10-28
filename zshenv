@@ -5,7 +5,7 @@ export DEVELOPMENT_DIR="$HOME/Development"
 export RBENV_ROOT="$HOME/.rbenv"
 export GOROOT="/usr/lib/go"
 export GOPATH="$DEVELOPMENT_DIR/golang"
-export PYENV_ROOT="$HOME/.pyenv"
+#export PYENV_ROOT="$HOME/.pyenv"
 export NODENV_ROOT="$HOME/.nodenv"
 
 # Development options
@@ -27,22 +27,23 @@ export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY=$(tty)
 export TERMINAL=/usr/bin/kitty
 export TERM=xterm-256color
-export QT_QPA_PLATFORMTHEME="qt5ct"
+#export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Wayland
 #export CLUTTER_BACKEN=wayland
 #export QT_QPA_PLATFORM=wayland-egl
 #export SDL_VIDEODRIVER=wayland
 
-export PATH="./bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$PYENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="./bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-if command -v pyenv >/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+#if command -v pyenv >/dev/null 2>&1; then
+#  eval "$(pyenv init -)"
+#  eval "$(pyenv virtualenv-init -)"
+#fi
 
 if command -v nodenv >/dev/null 2>&1; then
   eval "$(nodenv init -)"

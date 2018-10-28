@@ -1,6 +1,7 @@
 bundler
 ctags.rb
 haml_lint
+neovim
 rake
 reek
 rubocop
