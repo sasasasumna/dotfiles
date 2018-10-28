@@ -25,6 +25,7 @@ ln -sf ~/.dotfiles/compton.conf ~/.config/compton.conf
 ln -sf ~/.dotfiles/i3.conf ~/.config/i3/config
 ln -sf ~/.dotfiles/xprofile ~/.xprofile
 ln -sf ~/.dotfiles/i3blocks.conf ~/.i3blocks.conf
+ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 
 mkdir ~/bin
 ln -sf ~/.dotfiles/lock ~/bin
