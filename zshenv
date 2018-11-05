@@ -15,11 +15,12 @@ export RACK_ENV="development"
 export RAILS_ENV="$RACK_ENV"
 export SERVER_ENV="$RAILS_ENV"
 export APP_ENV="$SERVER_ENV"
-export TZ="America/Los_Angeles"
+export TZ="America/New_York"
 
 # System options
 export ARCHFLAGS="-arch x86_64"
-export EDITOR="vim"
+export EDITOR="nvim"
+export VISUAL=$EDITOR
 export VIM_CONFIG="$HOME/.vim"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ZSH="$HOME/.oh-my-zsh"
