@@ -5,6 +5,6 @@ if [ $pid ]; then
   killall compton
 else
   echo "Enabling compositor"
-  compton -cCFb --backend glx --vsync opengl
+  compton -b
 fi
 
