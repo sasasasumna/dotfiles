@@ -1,35 +1,36 @@
 #!/bin/bash
 # Battery status (systray)
 AC=$(</sys/class/power_supply/AC/online)
+OUTPUT=""
 
 # Battery is online: ICON % [CHARGING ICON]
 if [ -f /sys/class/power_supply/BAT0/capacity ]; then
-  #killall compton
   BAT=$(</sys/class/power_supply/BAT0/capacity)
-  if [ $BAT -lt 11 ]; then
-    echo ""
-  elif [ $BAT -gt 10 ] && [ $BAT -lt 31 ]; then
-    echo ""
+  OUTPUT=""
+  if [ $BAT -gt 10 ] && [ $BAT -lt 31 ]; then
+    OUTPUT=""
   elif [ $BAT -gt 30 ] && [ $BAT -lt 61 ]; then
-    echo ""
+    OUTPUT=""
   elif [ $BAT -gt 60 ] && [ $BAT -lt 81 ]; then
-    echo ""
+    OUTPUT=""
   elif [ $BAT -gt 80 ]; then
-    echo ""
+    OUTPUT=""
   fi
-  echo "$BAT%"
+  OUTPUT="$OUTPUT $BAT%"
   # Online and charging
   if [ $AC -eq 1 ]; then
-    echo ""
+    OUTPUT="$OUTPUT "
   fi
 else
   # AC only
-  echo ""
+  OUTPUT=""
 fi
 
 # Compositor Icon
 pid=$(pidof compton)
 if [ $pid ]; then
-  echo "&nbsp;"
+  OUTPUT="$OUTPUT "
 fi
+
+echo $OUTPUT
 

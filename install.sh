@@ -4,6 +4,7 @@ echo 'Making symlinks...'
 mkdir ~/.bundle
 mkdir -p ~/.bundle
 mkdir -p ~/.config/i3
+mkdir -p ~/.config/i3blocks
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
 
@@ -28,7 +29,7 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/compton.conf ~/.config/compton.conf
 ln -sf ~/.dotfiles/i3.conf ~/.config/i3/config
 ln -sf ~/.dotfiles/xprofile ~/.xprofile
-ln -sf ~/.dotfiles/i3blocks.conf ~/.i3blocks.conf
+ln -sf ~/.dotfiles/i3blocks.conf ~/.config/i3blocks/config
 ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 
