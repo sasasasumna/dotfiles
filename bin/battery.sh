@@ -26,11 +26,5 @@ else
   OUTPUT=""
 fi
 
-# Compositor Icon
-pid=$(pidof compton)
-if [ $pid ]; then
-  OUTPUT="$OUTPUT "
-fi
-
 echo $OUTPUT
 
