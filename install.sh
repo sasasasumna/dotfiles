@@ -10,6 +10,7 @@ mkdir -p ~/.config/nvim
 
 ln -sf ~/.dotfiles/aliases ~/.aliases
 ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
+ln -sf ~/.dotfiles/conkyrc ~/.conkyrc
 ln -sf ~/.dotfiles/eslintrc.yml ~/.eslintrc.yml
 ln -sf ~/.dotfiles/fonts.conf ~/fonts.conf
 ln -sf ~/.dotfiles/gpg.conf ~/gpg.conf
@@ -34,7 +35,10 @@ ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 
 mkdir ~/bin
-ln -sf ~/.dotfiles/lock ~/bin
+for script in `ls -d -1 $PWD/bin/*`
+do
+  ln -sf $script ~/bin
+done
 
 touch ~/.secrets
 source ~/.zshenv
