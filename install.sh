@@ -80,18 +80,6 @@ else
 fi
 ln -sf $ZSHRC_PATH ~/.zshrc
 
-VIMRC="$VIM_CONFIG/vimrc"
-if [ -f $VIMRC ]; then
-  echo "vim has already been set up, skipping"
-else
-  echo "Setting up vim..."
-  git clone https://github.com/sasasasumna/vim.git $VIM_CONFIG
-  path=$(pwd)
-  cd $VIM_CONFIG
-  ./install.sh
-  cd $path
-fi
-
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 cp ~/.tmux/.tmux.conf.local ~

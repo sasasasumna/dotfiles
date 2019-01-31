@@ -30,6 +30,8 @@ export GPG_TTY=$(tty)
 export TERMINAL=/usr/bin/kitty
 export TERM=xterm-256color
 #export QT_QPA_PLATFORMTHEME="qt5ct"
+export GTK_THEME=Arc-Dark
+export GTK2_RC_FILES=/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc
 
 # Wayland
 #export CLUTTER_BACKEND=wayland
