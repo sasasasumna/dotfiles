@@ -5,6 +5,7 @@ export DEVELOPMENT_DIR="$HOME/Development"
 export RBENV_ROOT="$HOME/.rbenv"
 export GOROOT="/usr/lib/go"
 export GOPATH="$DEVELOPMENT_DIR/golang"
+export GO111MODULE="on"
 #export PYENV_ROOT="$HOME/.pyenv"
 export NODENV_ROOT="$HOME/.nodenv"
 
@@ -31,9 +32,13 @@ export TERM=xterm-256color
 #export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # Wayland
-#export CLUTTER_BACKEN=wayland
+#export CLUTTER_BACKEND=wayland
 #export QT_QPA_PLATFORM=wayland-egl
 #export SDL_VIDEODRIVER=wayland
+
+# GTK
+export GTK_THEME=Arc-Dark
+export GTK2_RC_FILES=/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc
 
 export PATH="./bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
