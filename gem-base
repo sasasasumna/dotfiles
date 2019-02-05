@@ -7,7 +7,7 @@ reek
 rubocop
 scss_lint
 slim_lint
-solargraph
+'solargraph -v 0.18.0'
 spirit_hands
 sqlint
 yard

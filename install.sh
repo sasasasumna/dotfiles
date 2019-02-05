@@ -34,11 +34,7 @@ ln -sf ~/.dotfiles/i3blocks.conf ~/.config/i3blocks/config
 ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 
-mkdir ~/bin
-for script in `ls -d -1 $PWD/bin/*`
-do
-  ln -sf $script ~/bin
-done
+ln -s $PWD/bin ~/
 
 touch ~/.secrets
 source ~/.zshenv

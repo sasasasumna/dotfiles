@@ -1,3 +1,4 @@
 github.com/alecthomas/gometalinter
 github.com/derekparker/delve/cmd/dlv
+github.com/stamblerre/gocode
 

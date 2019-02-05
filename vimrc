@@ -15,31 +15,6 @@ if dein#load_state('/home/adam/.cache/dein')
   " Required:
   call dein#add('/home/adam/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-  " ruby
-  call dein#add('tpope/vim-rails.git')
-  call dein#add('tpope/vim-rake.git')
-  call dein#add('tpope/vim-bundler.git')
-  call dein#add('tpope/vim-rbenv.git')
-  call dein#add('slim-template/vim-slim')
-  call dein#add('tpope/vim-endwise')
-  call dein#add('fishbullet/deoplete-ruby')
-
-  " javascript
-  call dein#add('mxw/vim-jsx')
-  call dein#add('pangloss/vim-javascript')
-  call dein#add('carlitux/deoplete-ternjs')
-  call dein#add('HerringtonDarkholme/yats.vim')
-
-  " syntax
-  call dein#add('kchmck/vim-coffee-script')
-  call dein#add('tpope/vim-markdown')
-  call dein#add('ap/vim-css-color')
-
-  " golang
-  call dein#add('fatih/vim-go')
-  call dein#add('zchee/deoplete-go')
-  call dein#add('Blackrush/vim-gocode')
-
   " ide
   call dein#add('tpope/vim-projectionist')
   call dein#add('ludovicchabant/vim-gutentags')
@@ -55,8 +30,33 @@ if dein#load_state('/home/adam/.cache/dein')
   call dein#add('fweep/vim-zsh-path-completion')
   "call dein#add('roxma/vim-hug-neovim-rpc')
   call dein#add('roxma/nvim-yarp')
-  call dein#add('Shougo/deoplete.nvim')
   call dein#add('neomake/neomake')
+  call dein#add('sheerun/vim-polyglot')
+  call dein#add('Shougo/deoplete.nvim')
+
+  " ruby
+  call dein#add('tpope/vim-rails.git')
+  call dein#add('tpope/vim-rake.git')
+  call dein#add('tpope/vim-bundler.git')
+  call dein#add('tpope/vim-rbenv.git')
+  "call dein#add('slim-template/vim-slim')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('uplus/deoplete-solargraph')
+
+  " javascript
+  "call dein#add('mxw/vim-jsx')
+  "call dein#add('pangloss/vim-javascript')
+  call dein#add('carlitux/deoplete-ternjs')
+  call dein#add('HerringtonDarkholme/yats.vim')
+
+  " syntax
+  "call dein#add('kchmck/vim-coffee-script')
+  "call dein#add('tpope/vim-markdown')
+  call dein#add('ap/vim-css-color')
+
+  " golang
+  "call dein#add('fatih/vim-go')
+  call dein#add('zchee/deoplete-go', {'build': 'make'})
 
   " zsh
   call dein#add('zchee/deoplete-zsh')
@@ -65,6 +65,7 @@ if dein#load_state('/home/adam/.cache/dein')
   call dein#add('nanotech/jellybeans.vim')
   call dein#add('DanManN/vim-razer')
   call dein#add('fenetikm/falcon')
+  call dein#add('joshdick/onedark.vim')
 
   call dein#end()
   call dein#save_state()
@@ -169,10 +170,10 @@ set completeopt-=preview
 
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#align_class = 1
-let g:deoplete#sources#go#gocode_binary = '/home/adam/Development/golang/bin/gocode'
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#auto_goos = 1
 
-let g:deoplete#sources#ternjs#tern_bin = '/home/adam/.nodenv/shims/tern'
+let g:deoplete#sources#ternjs#tern_bin = $HOME.'/.nodenv/shims/tern'
 let g:deoplete#sources#ternjs#filetypes = ['jsx', 'ts', 'tsx', 'typescript', 'js.jsx', 'javascript.jsx', 'es6', 'js.es6', 'vue', 'js.vue']
 
 " ===============
@@ -214,11 +215,15 @@ endif
 " ===============
 " GUI options
 " ===============
-let g:falcon_airline = 1
-let g:airline_theme = 'falcon'
-colorscheme falcon
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+let g:airline_theme = 'onedark'
+let g:onedark_terminal_italics=1
+let g:onedark_termcolors=256
+colorscheme onedark
 nmap <C-CR> <Plug>(fullscreen-toggle)
-set termguicolors
 
 set guioptions=
 set linespace=2
@@ -229,6 +234,7 @@ if &term =~ '256color'
 endif
 
 if has("nvim")
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 else
   set guiheadroom=0
 endif
