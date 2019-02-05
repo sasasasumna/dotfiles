@@ -7,6 +7,7 @@ mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3blocks
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/rofi
 
 ln -sf ~/.dotfiles/aliases ~/.aliases
 ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
@@ -29,6 +30,7 @@ ln -sf ~/.dotfiles/vimrc ~/.vimrc
 
 ln -sf ~/.dotfiles/compton.conf ~/.config/compton.conf
 ln -sf ~/.dotfiles/i3.conf ~/.config/i3/config
+ln -sf ~/.dotfiles/rofi.conf ~/.config/rofi/config
 ln -sf ~/.dotfiles/xprofile ~/.xprofile
 ln -sf ~/.dotfiles/i3blocks.conf ~/.config/i3blocks/config
 ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
