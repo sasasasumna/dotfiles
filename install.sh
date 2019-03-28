@@ -40,6 +40,7 @@ ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/pam_environment ~/.pam_environment
 ln -sf ~/.dotfiles/ssh-agent.service ~/.config/systemd/user/
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
+ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
 
 ln -s $PWD/bin ~/
 
