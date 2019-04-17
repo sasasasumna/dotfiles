@@ -28,6 +28,7 @@ ln -sf ~/.dotfiles/node-version ~/.node-version
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/gemspec ~/.gemspec
 
 ln -sf ~/.dotfiles/compton.conf ~/.config/compton.conf
 ln -sf ~/.dotfiles/i3.conf ~/.config/i3/config
@@ -39,6 +40,7 @@ ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/pam_environment ~/.pam_environment
 ln -sf ~/.dotfiles/ssh-agent.service ~/.config/systemd/user/
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
+ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
 
 ln -s $PWD/bin ~/
 
