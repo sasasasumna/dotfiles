@@ -5,7 +5,7 @@ export DEVELOPMENT_DIR="$HOME/Development"
 export RBENV_ROOT="$HOME/.rbenv"
 export GOROOT="/usr/lib/go"
 export GOPATH="$DEVELOPMENT_DIR/golang"
-export GO111MODULE="on"
+export GO111MODULE="auto"
 #export PYENV_ROOT="$HOME/.pyenv"
 export NODENV_ROOT="$HOME/.nodenv"
 
