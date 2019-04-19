@@ -1,5 +1,6 @@
 bundler
 ctags.rb
+erd
 haml_lint
 neovim
 rake
@@ -7,7 +8,7 @@ reek
 rubocop
 scss_lint
 slim_lint
-'solargraph -v 0.18.0'
+solargraph
 spirit_hands
 sqlint
 yard
