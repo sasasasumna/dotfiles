@@ -1,4 +1,5 @@
-github.com/alecthomas/gometalinter
+github.com/golangci/golangci-lint/cmd/golangci-lint
 github.com/derekparker/delve/cmd/dlv
+github.com/jackc/sqlfmt
+github.com/mrtazz/checkmake
 github.com/stamblerre/gocode
-

@@ -1,4 +1,5 @@
 neovim --user
 solargraph-utils.py --user
 ujson --user
+yamllint --user
 
