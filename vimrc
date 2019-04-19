@@ -32,7 +32,8 @@ if dein#load_state('/home/adam/.cache/dein')
   call dein#add('roxma/nvim-yarp')
   call dein#add('neomake/neomake')
   call dein#add('sheerun/vim-polyglot')
-  call dein#add('Shougo/deoplete.nvim')
+  "call dein#add('Shougo/deoplete.nvim')
+  call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
 
   " ruby
   call dein#add('tpope/vim-rails.git')
@@ -41,7 +42,7 @@ if dein#load_state('/home/adam/.cache/dein')
   call dein#add('tpope/vim-rbenv.git')
   "call dein#add('slim-template/vim-slim')
   call dein#add('tpope/vim-endwise')
-  call dein#add('uplus/deoplete-solargraph')
+  "call dein#add('uplus/deoplete-solargraph')
 
   " javascript
   "call dein#add('mxw/vim-jsx')
@@ -56,10 +57,10 @@ if dein#load_state('/home/adam/.cache/dein')
 
   " golang
   "call dein#add('fatih/vim-go')
-  call dein#add('zchee/deoplete-go', {'build': 'make'})
+  "call dein#add('zchee/deoplete-go', {'build': 'make'})
 
   " zsh
-  call dein#add('zchee/deoplete-zsh')
+  "call dein#add('zchee/deoplete-zsh')
 
   " colorschemes
   call dein#add('nanotech/jellybeans.vim')
@@ -150,31 +151,39 @@ endif
 " bind K to grep word under cursor
 "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+
+
+" ===============
+" Ruby
+" ===============
+let g:ruby_host_prog = '~/.rbenv/versions/2.6.3/bin/neovim-ruby-host'
+
+
 " ===============
 " Deoplete
 " ===============
-let g:python3_host_skip_check = 1
-let g:python3_host_prog = '/usr/bin/python'
-
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#auto_complete_start_length = 1
-let g:deoplete#auto_complete_delay = 300
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns['default'] = '\h\w*'
-let g:deoplete#omni#input_patterns = {}
-"call deoplete#custom#source('_', 'converters', ['converter_auto_paren', 'converter_auto_delimiter', 'converter_remove_overlap'])
-imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
-imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
-set completeopt-=preview
-
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-let g:deoplete#sources#go#align_class = 1
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#auto_goos = 1
-
-let g:deoplete#sources#ternjs#tern_bin = $HOME.'/.nodenv/shims/tern'
-let g:deoplete#sources#ternjs#filetypes = ['jsx', 'ts', 'tsx', 'typescript', 'js.jsx', 'javascript.jsx', 'es6', 'js.es6', 'vue', 'js.vue']
+""let g:python3_host_skip_check = 1
+""let g:python3_host_prog = '/usr/bin/python'
+""
+""let g:deoplete#enable_at_startup = 1
+""let g:deoplete#enable_smart_case = 1
+""let g:deoplete#auto_complete_start_length = 1
+""let g:deoplete#auto_complete_delay = 300
+""let g:deoplete#keyword_patterns = {}
+""let g:deoplete#keyword_patterns['default'] = '\h\w*'
+""let g:deoplete#omni#input_patterns = {}
+"""call deoplete#custom#source('_', 'converters', ['converter_auto_paren', 'converter_auto_delimiter', 'converter_remove_overlap'])
+""imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
+""imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
+""set completeopt-=preview
+""
+""let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+""let g:deoplete#sources#go#align_class = 1
+""let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+""let g:deoplete#sources#go#auto_goos = 1
+""
+""let g:deoplete#sources#ternjs#tern_bin = $HOME.'/.nodenv/shims/tern'
+""let g:deoplete#sources#ternjs#filetypes = ['jsx', 'ts', 'tsx', 'typescript', 'js.jsx', 'javascript.jsx', 'es6', 'js.es6', 'vue', 'js.vue']
 
 " ===============
 " Remove trailing spaces

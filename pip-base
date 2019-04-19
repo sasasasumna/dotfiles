@@ -1,4 +1,4 @@
-neovim
+neovim --user
 solargraph-utils.py --user
-ujson
+ujson --user
 
