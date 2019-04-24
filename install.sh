@@ -23,8 +23,8 @@ ln -sf ~/.dotfiles/irbrc ~/.irbrc
 ln -sf ~/.dotfiles/pryrc ~/.pryrc
 ln -sf ~/.dotfiles/railsrc ~/.railsrc
 ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
-ln -sf ~/.dotfiles/ruby-version ~/.ruby-version
-ln -sf ~/.dotfiles/node-version ~/.node-version
+ln -sf ~/.dotfiles/.ruby-version ~/.ruby-version
+ln -sf ~/.dotfiles/.node-version ~/.node-version
 ln -sf ~/.dotfiles/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
