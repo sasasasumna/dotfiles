@@ -321,8 +321,8 @@ nmap <C-CR> <Plug>(fullscreen-toggle)
 
 set guioptions=
 set linespace=2
-set guifont=Hack:h10
-set gfn=Hack\ 10
+set guifont=Hack:h12
+set gfn=Hack\ 12
 if &term =~ '256color'
   set t_ut=
 endif
