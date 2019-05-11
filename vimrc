@@ -19,9 +19,9 @@ if dein#load_state('/home/adam/.cache/dein')
 
   " ide
   "call dein#add('tpope/vim-projectionist')
-  call dein#add('ludovicchabant/vim-gutentags')
+  "call dein#add('ludovicchabant/vim-gutentags')
   "call dein#add('xolox/vim-misc')
-  call dein#add('w0rp/ale')
+  "call dein#add('w0rp/ale')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-sensible')
   call dein#add('ryanoasis/vim-devicons')

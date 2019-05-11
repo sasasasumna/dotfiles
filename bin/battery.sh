@@ -1,6 +1,10 @@
 #!/bin/bash
 # Battery status (systray)
-AC=$(</sys/class/power_supply/AC/online)
+AC=0
+if [[ -f /sys/class/power_supply/AC/online ]]; then
+  AC=$(</sys/class/power_supply/AC/online)
+fi
+
 OUTPUT=""
 
 # Battery is online: ICON % [CHARGING ICON]
@@ -27,4 +31,3 @@ else
 fi
 
 echo $OUTPUT
-

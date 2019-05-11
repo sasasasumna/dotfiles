@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "$(free -h | grep "^Mem:" | awk '{print $7}') free"
+
+free -b | grep '^Mem:' | awk '{printf "%.1f", ($3/$2)*100}'
