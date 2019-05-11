@@ -36,8 +36,8 @@ export TERM=xterm-256color
 #export SDL_VIDEODRIVER=wayland
 
 # GTK
-export GTK_THEME=Arc-Dark
-export GTK2_RC_FILES=/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc
+#export GTK_THEME=Arc-Dark
+#export GTK2_RC_FILES=/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
