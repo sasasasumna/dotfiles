@@ -9,6 +9,7 @@ mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/rofi
 mkdir -p ~/.config/systemd/user
+mkdir -p ~/.config/yarn/global
 
 ln -sf ~/.dotfiles/aliases ~/.aliases
 ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
@@ -42,6 +43,7 @@ ln -sf ~/.dotfiles/ssh-agent.service ~/.config/systemd/user/
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
 ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
 ln -sf ~/.dotfiles/coc-settings.json ~/.config/nvim/
+ln -sf ~/.dotfiles/package.json ~/.config/yarn/global/
 
 ln -s $PWD/bin ~/
 
@@ -121,18 +123,31 @@ RUBY_VERSION=`echo -n "$(head -1 ruby-version)"`
 echo "Installing Ruby ${RUBY_VERSION}..."
 rbenv install $RUBY_VERSION
 rbenv global $RUBY_VERSION
+rbenv rehash
+gem update --system
+gem update
+gem clean
+gem install bundler
+rbenv rehash
+bundle install --system
+rbenv rehash
 
 NODE_VERSION=`echo -n "$(head -1 node-version)"`
 echo "Installing Node ${NODE_VERSION}..."
 nodenv install $NODE_VERSION
 nodenv global $NODE_VERSION
+nodenv rehash
+npm update
+nodenv rehash
+npm install -g yarn@latest
+nodenv rehash
+yarn global upgrade
+nodenv rehash
 
 echo "Installing delve for go debugging"
 go get -u github.com/derekparker/delve/cmd/dlv
 
 source ~/.dotfiles/aliases
-_gempackages
-_npmpackages
 
 echo "!!!!"
 echo "DONE"

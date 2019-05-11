@@ -39,8 +39,6 @@ export TERM=xterm-256color
 export GTK_THEME=Arc-Dark
 export GTK2_RC_FILES=/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc
 
-export PATH="./bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
@@ -54,8 +52,9 @@ if command -v nodenv >/dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
 
+export PATH="$HOME/.yarn/bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
 
 #eval `keychain --eval id_rsa`
-
