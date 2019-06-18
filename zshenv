@@ -3,10 +3,10 @@ export DEVELOPMENT_DIR="$HOME/Development"
 
 # SDK directories
 export RBENV_ROOT="$HOME/.rbenv"
-export GOROOT="/usr/lib/go"
+export GOROOT="/opt/local/go"
 export GOPATH="$DEVELOPMENT_DIR/golang"
 export GO111MODULE="auto"
-#export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.pyenv"
 export NODENV_ROOT="$HOME/.nodenv"
 
 # Development options
@@ -25,34 +25,22 @@ export VISUAL=$EDITOR
 export VIM_CONFIG="$HOME/.vim"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ZSH="$HOME/.oh-my-zsh"
-export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY=$(tty)
-export TERMINAL=/usr/bin/kitty
-export TERM=xterm-256color
-
-# Wayland
-#export CLUTTER_BACKEND=wayland
-#export QT_QPA_PLATFORM=wayland-egl
-#export SDL_VIDEODRIVER=wayland
-
-# GTK
-#export GTK_THEME=Arc-Dark
-#export GTK2_RC_FILES=/usr/share/themes/Arc-Dark/gtk-2.0/gtkrc
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-#if command -v pyenv >/dev/null 2>&1; then
-#  eval "$(pyenv init -)"
-#  eval "$(pyenv virtualenv-init -)"
-#fi
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 if command -v nodenv >/dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
 
-export PATH="$HOME/.yarn/bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/shims:$NODENV_ROOT/shims:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
