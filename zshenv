@@ -46,4 +46,4 @@ source $DOTFILES_DIR/aliases
 source $HOME/.secrets
 
 #eval `keychain --eval id_rsa`
-eval $(docker-machine env default)
+#eval $(docker-machine env default)
