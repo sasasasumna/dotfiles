@@ -45,5 +45,8 @@ export PATH="$HOME/.yarn/bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/shims:$NODEN
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
 
-#eval `keychain --eval id_rsa`
-#eval $(docker-machine env default)
+ssh-add -K ~/.ssh/id_rsa
+echo "ZSHENV"
+
+docker-machine start default 2>&1 > /dev/null
+eval $(docker-machine env)
