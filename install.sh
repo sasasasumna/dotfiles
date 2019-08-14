@@ -26,7 +26,6 @@ ln -sf ~/.dotfiles/railsrc ~/.railsrc
 ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/.dotfiles/.ruby-version ~/.ruby-version
 ln -sf ~/.dotfiles/.node-version ~/.node-version
-ln -sf ~/.dotfiles/zshenv ~/.zshenv
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
@@ -48,7 +47,6 @@ ln -sf ~/.dotfiles/package.json ~/.config/yarn/global/
 ln -s $PWD/bin ~/
 
 touch ~/.secrets
-source ~/.zshenv
 
 if [ -f $ZSH/oh-my-zsh.sh ]; then
   echo 'oh-my-zsh detected, skipping installation'
@@ -58,11 +56,8 @@ else
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:$ZSH/custom}/plugins/zsh-syntax-highlighting
 fi
 
-ZSHRC_PATH=$DOTFILES_DIR/zshrc-ubuntu
-
 if command -v sw_vers > /dev/null; then
   echo 'macOS detected!'
-  ZSHRC_PATH=$DOTFILES_DIR/zshrc-mac
   if command -v brew > /dev/null; then
     echo 'Homebrew detected, skipping installation'
   else
@@ -85,7 +80,7 @@ else
 #{    exit 1
 #{  fi
 fi
-ln -sf $ZSHRC_PATH ~/.zshrc
+ln -sf $DOTFILES_DIR/zshrc-common ~/.zshrc
 
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf

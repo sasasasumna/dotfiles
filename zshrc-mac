@@ -1,6 +1,5 @@
 export ZSH_HIGHLIGHT_DIR="/usr/local/share/zsh-syntax-highlighting"
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
-source $DOTFILES_DIR/zshrc-common
 export PATH="/usr/local/opt/qt/bin:${PATH}"
 
 /usr/local/MacGPG2/bin/gpgconf --launch gpg-agent
