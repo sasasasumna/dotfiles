@@ -1,21 +1,14 @@
 #!/bin/bash
 
 echo 'Making symlinks...'
-mkdir ~/.bundle
 mkdir -p ~/.bundle
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/i3blocks
-mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
-mkdir -p ~/.config/rofi
-mkdir -p ~/.config/systemd/user
 mkdir -p ~/.config/yarn/global
+mkdir -p ~/.zfunc
 
 ln -sf ~/.dotfiles/aliases ~/.aliases
 ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
-ln -sf ~/.dotfiles/conkyrc ~/.conkyrc
 ln -sf ~/.dotfiles/eslintrc.yml ~/.eslintrc.yml
-ln -sf ~/.dotfiles/fonts.conf ~/fonts.conf
 ln -sf ~/.dotfiles/gpg.conf ~/gpg.conf
 ln -sf ~/.dotfiles/gpg-agent.conf ~/gpg-agent.conf
 ln -sf ~/.dotfiles/gemrc ~/.gemrc
@@ -30,15 +23,8 @@ ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
 
-ln -sf ~/.dotfiles/compton.conf ~/.config/compton.conf
-ln -sf ~/.dotfiles/i3.conf ~/.config/i3/config
-ln -sf ~/.dotfiles/rofi.conf ~/.config/rofi/config
-ln -sf ~/.dotfiles/xprofile ~/.xprofile
-ln -sf ~/.dotfiles/i3blocks.conf ~/.config/i3blocks/config
 ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
-ln -sf ~/.dotfiles/pam_environment ~/.pam_environment
-ln -sf ~/.dotfiles/ssh-agent.service ~/.config/systemd/user/
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
 ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
 ln -sf ~/.dotfiles/coc-settings.json ~/.config/nvim/

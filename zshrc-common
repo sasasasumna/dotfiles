@@ -27,6 +27,8 @@ export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ZSH="$HOME/.oh-my-zsh"
 export GPG_TTY=$(tty)
 
+fpath+=~/.zfunc
+
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
@@ -44,7 +46,7 @@ if command -v jenv >/dev/null 2>&1; then
   eval "$(jenv init -)"
 fi
 
-export PATH="$HOME/.yarn/bin:$HOME/.jenv/bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/shims:$NODENV_ROOT/shims:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.jenv/bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/shims:$NODENV_ROOT/shims:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
