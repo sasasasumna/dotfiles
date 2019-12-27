@@ -3,7 +3,6 @@ export DEVELOPMENT_DIR="$HOME/Development"
 
 # SDK directories
 export RBENV_ROOT="$HOME/.rbenv"
-export GOROOT="/opt/local/go"
 export GOPATH="$DEVELOPMENT_DIR/golang"
 export GO111MODULE="auto"
 export PYENV_ROOT="$HOME/.pyenv"
@@ -46,7 +45,7 @@ if command -v jenv >/dev/null 2>&1; then
   eval "$(jenv init -)"
 fi
 
-export PATH="$HOME/.yarn/bin:$HOME/.jenv/bin:$HOME/bin:$HOME/.local/bin:$RBENV_ROOT/shims:$NODENV_ROOT/shims:$RBENV_ROOT/bin:$NODENV_ROOT/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.jenv/bin:$HOME/bin:$HOME/.local/bin:$NODENV_ROOT/shims:$RBENV_ROOT/shims:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
@@ -74,3 +73,6 @@ if command -v sw_vers > /dev/null; then
 else
   source $DOTFILES_DIR/zshrc-linux
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
