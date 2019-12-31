@@ -1,28 +1,31 @@
 {
+  "go.enable": true,
   "languageserver": {
-    "cquery": {
-      "command": "cquery",
-      "args": ["--log-file=/tmp/cq.log"],
-      "filetypes": ["c", "cpp"],
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
       "initializationOptions": {
-        "cacheDirectory": "/tmp/cquery"
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
       }
-    }, "golang": {
+    },
+    "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
-    }, "dockerfile": {
+    },
+    "dockerfile": {
       "command": "docker-langserver",
       "filetypes": ["dockerfile"],
       "args": ["--stdio"]
-    }, "lua": {
-      "command": "lua-lsp",
-      "filetypes": ["lua"]
-    }, "efm": {
-      "command": "efm-langserver",
-      "args": [],
-      "filetypes": ["vim", "eruby", "markdown"]
+    },
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
     }
   }
 }
