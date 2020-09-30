@@ -4,3 +4,5 @@
 
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
+[log]
+	date = local
