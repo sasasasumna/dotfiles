@@ -30,6 +30,12 @@ ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
 ln -sf ~/.dotfiles/coc-settings.json ~/.config/nvim/
 ln -sf ~/.dotfiles/package.json ~/.config/yarn/global/
 
+rm -f ~/.bash_profile
+ln -sf ~/.dotfiles/zshrc-common ~/.zshrc
+ln -sf ~/.dotfiles/profile ~/.zshenv
+mkdir -p ~/.config/plasma-workspace/env
+ln -sf ~/.dotfiles/profile ~/.config/plasma-workspace/env/profile.sh
+
 ln -s $PWD/bin ~/
 
 touch ~/.secrets
@@ -66,7 +72,6 @@ else
 #{    exit 1
 #{  fi
 fi
-ln -sf $DOTFILES_DIR/zshrc-common ~/.zshrc
 
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf

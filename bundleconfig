@@ -7,3 +7,5 @@ BUNDLE_BUILD__FFI: "--with-pkg-config=/usr/local/opt/libffi/lib/pkgconfig --with
 BUNDLE_BUILD__CAPYBARA-WEBKIT: "--with-opt-dir=/usr/local/opt/qt"
 BUNDLE_BUILD__RMAGICK: "--with-opt-dir=/usr/local/opt/imagemagick"
 BUNDLE_CONSOLE: "pry"
+BUNDLE_DEPLOYMENT: "false"
+BUNDLE_WITHOUT: ""
