@@ -6,3 +6,5 @@
 	insteadOf = https://gitlab.com/
 [log]
 	date = local
+[pull]
+	rebase = false

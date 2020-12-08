@@ -3,6 +3,7 @@
 echo 'Making symlinks...'
 mkdir -p ~/.bundle
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/coc
 mkdir -p ~/.config/yarn/global
 mkdir -p ~/.zfunc
 
@@ -27,7 +28,7 @@ ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
 ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
-ln -sf ~/.dotfiles/coc-settings.json ~/.config/nvim/
+ln -sf ~/.dotfiles/coc-settings.json ~/.config/coc/
 ln -sf ~/.dotfiles/package.json ~/.config/yarn/global/
 
 rm -f ~/.bash_profile

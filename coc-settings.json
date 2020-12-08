@@ -1,4 +1,5 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["css", "ruby", "golang", "Javascript", "Typescript"],
   "go.enable": true,
   "languageserver": {
     "ccls": {
