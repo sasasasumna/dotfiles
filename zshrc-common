@@ -1,4 +1,3 @@
-fpath+=$HOME/.zfunc
 
 #eval "$(ssh-agent)"
 #ssh-add -K ~/.ssh/id_rsa 2>&1 > /dev/null
@@ -9,6 +8,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
+fpath+=$HOME/.zfunc
 source $ZSH/oh-my-zsh.sh
 
 if command -v sw_vers > /dev/null; then

@@ -19,32 +19,43 @@ export TZ="America/Los_Angeles"
 
 # System options
 export ARCHFLAGS="-arch x86_64"
-export EDITOR="nvim"
+export EDITOR="vim"
 export VISUAL=$EDITOR
 export VIM_CONFIG="$HOME/.vim"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ZSH="$HOME/.oh-my-zsh"
 export GPG_TTY=$(tty)
 
-export PATH="$(yarn global bin):$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-if command -v pyenv >/dev/null 2>&1; then
+if command -v pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
 
-if command -v nodenv >/dev/null 2>&1; then
+if command -v nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 fi
 
-if command -v jenv >/dev/null 2>&1; then
+if command -v jenv > /dev/null 2>&1; then
   eval "$(jenv init -)"
 fi
+
+if command -v rustup > /dev/null 2>&1; then
+  rustup completions zsh cargo > /tmp/completions && source /tmp/completions && rm /tmp/completions
+  rustup completions zsh rustup > /tmp/completions && source /tmp/completions && rm /tmp/completions
+fi
+
+export PATH="$(yarn global bin):$PATH"
 
 source $DOTFILES_DIR/aliases
 source $HOME/.secrets
 
+
+ssh-remote-config() {
+  infocmp -x | ssh -t $1 'cat > "$TERM.info" && tic -x "$TERM.info"'
+}

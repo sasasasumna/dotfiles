@@ -1,6 +1,6 @@
 [user]
 	name = Adam Sumner
-	email = adamsumner@gmail.com
+	email = adam@sumner.us
 
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/

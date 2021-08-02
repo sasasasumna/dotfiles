@@ -76,7 +76,7 @@ call plug#begin()
   " Ruby
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-rbenv'
-  Plug 'tpope/vim-ruby'
+  Plug 'vim-ruby/vim-ruby'
   Plug 'slim-template/vim-slim'
 
   " Javascript/Typescript
@@ -87,7 +87,9 @@ call plug#begin()
   Plug 'ludovicchabant/vim-gutentags'
   Plug 'tpope/vim-sensible'
 
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+  Plug 'vim-syntastic/syntastic'
+  Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 
@@ -102,131 +104,6 @@ autocmd VimEnter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 
-  " ide
-  "call dein#add('tpope/vim-projectionist')
-  "call dein#add('xolox/vim-misc')
-  "call dein#add('w0rp/ale')
-  "call dein#add('mileszs/ack.vim')
-  "call dein#add('roxma/vim-hug-neovim-rpc')
-  "call dein#add('roxma/nvim-yarp')
-  "call dein#add('neomake/neomake')
- "  call dein#add('sheerun/vim-polyglot')
- " call dein#add('Shougo/denite.nvim')
-  "call dein#add('neoclide/coc.nvim', {'merge':0, 'build': './install.sh nightly'})
-
-  " ruby
-"  call dein#add('tpope/vim-rails.git')
-"  call dein#add('tpope/vim-rake.git')
-"  call dein#add('tpope/vim-bundler.git')
-"  call dein#add('tpope/vim-rbenv.git')
-  "call dein#add('slim-template/vim-slim')
-  "call dein#add('tpope/vim-endwise')
-  "call dein#add('uplus/deoplete-solargraph')
-
-  " javascript
-  "call dein#add('mxw/vim-jsx')
-  "call dein#add('pangloss/vim-javascript')
-  "call dein#add('carlitux/deoplete-ternjs')
-
-  " syntax
-  "call dein#add('kchmck/vim-coffee-script')
-  "call dein#add('tpope/vim-markdown')
-  "call dein#add('ap/vim-css-color')
-
-  " golang
-  "call dein#add('fatih/vim-go')
-  "call dein#add('zchee/deoplete-go', {'build': 'make'})
-
-  " zsh
-  "call dein#add('zchee/deoplete-zsh')
-
-
-" If you want to install not installed plugins on startup.
-" if dein#check_install()
-"  call dein#install()
-"endif
-
-"End dein Scripts-------------------------
-
-
-"" ===============
-"" Denite
-"" ===============
-"" Wrap in try/catch to avoid errors on initial install before plugin is available
-"try
-"" Use ripgrep for searching current directory for files
-"" By default, ripgrep will respect rules in .gitignore
-""   --files: Print each file that would be searched (but don't search)
-""   --glob:  Include or exclues files for searching that match the given glob
-""            (aka ignore .git files)
-""
-"call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
-"
-"" Use ripgrep in place of "grep"
-"call denite#custom#var('grep', 'command', ['rg'])
-"
-"" Custom options for ripgrep
-""   --vimgrep:  Show results with every match on it's own line
-""   --hidden:   Search hidden directories and files
-""   --heading:  Show the file name above clusters of matches from each file
-""   --S:        Search case insensitively if the pattern is all lowercase
-"call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
-"
-"" Recommended defaults for ripgrep via Denite docs
-"call denite#custom#var('grep', 'recursive_opts', [])
-"call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-"call denite#custom#var('grep', 'separator', ['--'])
-"call denite#custom#var('grep', 'final_opts', [])
-"
-"" Remove date from buffer list
-"call denite#custom#var('buffer', 'date_format', '')
-"
-"" Custom options for Denite
-""   auto_resize             - Auto resize the Denite window height automatically.
-""   prompt                  - Customize denite prompt
-""   direction               - Specify Denite window direction as directly below current pane
-""   winminheight            - Specify min height for Denite window
-""   highlight_mode_insert   - Specify h1-CursorLine in insert mode
-""   prompt_highlight        - Specify color of prompt
-""   highlight_matched_char  - Matched characters highlight
-""   highlight_matched_range - matched range highlight
-"let s:denite_options = {'default' : {
-"\ 'auto_resize': 1,
-"\ 'prompt': 'λ:',
-"\ 'direction': 'rightbelow',
-"\ 'winminheight': '10',
-"\ 'highlight_mode_insert': 'Visual',
-"\ 'highlight_mode_normal': 'Visual',
-"\ 'prompt_highlight': 'Function',
-"\ 'highlight_matched_char': 'Function',
-"\ 'highlight_matched_range': 'Normal'
-"\ }}
-"
-"" Loop through denite options and enable them
-"function! s:profile(opts) abort
-"  for l:fname in keys(a:opts)
-"    for l:dopt in keys(a:opts[l:fname])
-"      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
-"    endfor
-"  endfor
-"endfunction
-"
-""   ;         - Browser currently open buffers
-""   <leader>t - Browse list of files in current directory
-""   <leader>g - Search current directory for occurences of given term and
-""   close window if no results
-""   <leader>j - Search current directory for occurences of word under cursor
-"nmap ; :Denite buffer -split=floating -winrow=1<CR>
-"nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
-"nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
-"nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-"
-"call s:profile(s:denite_options)
-"catch
-"  echo 'Denite not installed'
-"endtry
-"
-"
 
 " ===============
 " Git Gutter
@@ -237,16 +114,6 @@ let g:gitgutter_eager = 1
 
 " What is this?
 let g:javascript_enable_domhtmlcss = 1
-
-"" ===============
-"" ALE
-"" ===============
-"let g:ale_fixers = {
-"\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-"\   'javascript': ['prettier', 'eslint'],
-"\}
-"let g:ale_fix_on_save = 1
-
 
 
 " ===============
@@ -265,31 +132,6 @@ endif
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" ===============
-" Deoplete
-" ===============
-""let g:python3_host_skip_check = 1
-""let g:python3_host_prog = '/usr/bin/python'
-""
-""let g:deoplete#enable_at_startup = 1
-""let g:deoplete#enable_smart_case = 1
-""let g:deoplete#auto_complete_start_length = 1
-""let g:deoplete#auto_complete_delay = 300
-""let g:deoplete#keyword_patterns = {}
-""let g:deoplete#keyword_patterns['default'] = '\h\w*'
-""let g:deoplete#omni#input_patterns = {}
-"""call deoplete#custom#source('_', 'converters', ['converter_auto_paren', 'converter_auto_delimiter', 'converter_remove_overlap'])
-""imap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
-""imap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<tab>"
-""set completeopt-=preview
-""
-""let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-""let g:deoplete#sources#go#align_class = 1
-""let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-""let g:deoplete#sources#go#auto_goos = 1
-""
-""let g:deoplete#sources#ternjs#tern_bin = $HOME.'/.nodenv/shims/tern'
-""let g:deoplete#sources#ternjs#filetypes = ['jsx', 'ts', 'tsx', 'typescript', 'js.jsx', 'javascript.jsx', 'es6', 'js.es6', 'vue', 'js.vue']
 
 " ===============
 " Remove trailing spaces
@@ -327,6 +169,7 @@ else
   autocmd FileType yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 endif
 
+
 " ===============
 " GUI options
 " ===============
@@ -356,11 +199,13 @@ else
   set guiheadroom=0
 endif
 
+
 " ===============
 " File extension / type associations
 " ===============
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.dump set filetype=sql
+
 
 " ===============
 " Airline
@@ -393,58 +238,25 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline#extensions#ale#enabled = 1
 
-" ===============
-" Neomake Linters
-" ===============
-"autocmd! BufWritePost * Neomake
-"
-"let g:neomake_error_sign   = {'text': '✖', 'texthl': 'NeomakeErrorSign'}
-"let g:neomake_warning_sign = {'text': '∆', 'texthl': 'NeomakeWarningSign'}
-"let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign'}
-"let g:neomake_info_sign    = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
-"let g:neomake_go_gometalinter_maker = {
-"  \ 'args': [
-"  \   '--tests',
-"  \   '--enable-gc',
-"  \   '--concurrency=10',
-"  \   '--fast',
-"  \   '-D', 'aligncheck',
-"  \   '-D', 'dupl',
-"  \   '-D', 'gocyclo',
-"  \   '-D', 'gotype',
-"  \   '-E', 'errcheck',
-"  \   '-E', 'misspell',
-"  \   '-E', 'unused',
-"  \   '%:p:h',
-"  \ ],
-"  \ 'exec': '/home/adam/Development/golang/bin/gometalinter',
-"  \ 'append_file': 0,
-"  \ 'errorformat':
-"  \   '%E%f:%l:%c:%trror: %m,' .
-"  \   '%W%f:%l:%c:%tarning: %m,' .
-"  \   '%E%f:%l::%trror: %m,' .
-"  \   '%W%f:%l::%tarning: %m'
-"  \ }
-"
-"let g:neomake_coffee_enabled_makers = ['coffeelint']
-"let g:neomake_cpp_enabled_makers = ['gcc']
-"let g:neomake_css_enabled_makers = ['stylelint']
-""let g:neomake_dockerfile_enabled_makers = ['hadolint']
-"let g:neomake_go_enabled_makers = ['gometalinter']
-"let g:neomake_haml_enabled_makers = ['haml-lint']
-"let g:neomake_javascript_enabled_makers = ['eslint', 'stylelint']
-"let g:neomake_json_enabled_makers = ['eslint']
-"let g:neomake_ruby_enabled_makers = ['rubocop', 'reek']
-"let g:neomake_scss_enabled_makers = ['scsslint', 'stylelint']
-"let g:neomake_slim_enabled_makers = ['slimlint']
-"let g:neomake_sql_enabled_makers = ['sqlint']
-"let g:neomake_typescript_enabled_makers = ['tslint']
-
 
 " ===============
 " Gutentags
 " ===============
 set statusline+=%{gutentags#statusline()}
+
+
+" ===============
+" uyntastic
+" ===============
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 " ===============
 " Vim-Go
@@ -462,24 +274,6 @@ autocmd FileType go nmap <buffer> gd <plug>(go-def-vertical)
 autocmd FileType go nmap <buffer> <c-]> <plug>(go-def-vertical)
 autocmd FileType go nmap <buffer> <leader>i <plug>(go-info)
 
-
-
-" ===============
-" CoC
-" ===============
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
-" Use TAB to make selection
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " ===============
 " Filetype assignments
