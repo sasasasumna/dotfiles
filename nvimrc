@@ -319,6 +319,7 @@ endif
 " File extension / type associations
 " ===============
 
+autocmd BufNewFile,BufRead *.pgsql setlocal filetype=sql
 
 "" ===============
 "" Airline

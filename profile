@@ -19,7 +19,7 @@ export TZ="America/Los_Angeles"
 
 # System options
 export ARCHFLAGS="-arch x86_64"
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL=$EDITOR
 export VIM_CONFIG="$HOME/.vim"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
