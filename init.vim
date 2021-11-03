@@ -1,19 +1,30 @@
-syntax on            " enable syntax highlighting
+
+filetype plugin indent on
+syntax enable
+
+syntax on                      " enable syntax highlighting
 
 set bs=2                       " set backspace to 2 when removing whitespace
-set clipboard=unnamed          " share system clipboard
-set cmdheight=2                " give messages one extra line to display
+set clipboard+=unnamedplus     " share system clipboard
+set cmdheight=2
+set completeopt=menuone,noselect
 set cursorline                 " highlight current line
 set directory=~/.vim/swp       " swap files go here
 set encoding=utf8              " file encoding defaults to UTF8
 set expandtab                  " expand tabs to spaces
+set gfn=Hack\ 12
+set go+=a                      " Visual selection automatically copied to the clipboard
+set guifont=Hack:h12
+set guioptions=
 set hidden                     " hide buffers instead of closing them
 set history=1000               " command history of 1000
 set hlsearch                   " highlight search terms
 set incsearch                  " incremental search
 set laststatus=2               " always display status line
 set lazyredraw                 " buffer redraws instead of drawing each one
+set linespace=2
 set modelines=0                " never prepend vim config line to file
+set mouse=a
 set nobackup                   " disable backups
 set nocompatible               " disable backward compatibility with Vi
 set nocindent                  " disable indentation for C-style languages
@@ -23,12 +34,14 @@ set nosmartindent              " smart indentations get in the way
 set nowrap                     " disable line wrapping
 set nowritebackup
 set number                     " show line numbers
+set paste                      " Paste from a windows or from vim
 set regexpengine=1
 set ruler                      " draw ruler
 set shiftwidth=2               " indent by 2 spaces
-set shortmess+=c               " don't give |ins-completion-menu| messages.
+set shortmess+=c
+set showmatch
 set showtabline=0              " do not draw tabs
-set signcolumn=yes             " always show signcolumns
+set signcolumn=number
 set sm                         " show matching braces
 set smartcase                  " insensitive by default, switches to case sensitive when capital letters are typed
 set softtabstop=2              " tab stops to 2 spaces
@@ -39,68 +52,114 @@ set undolevels=1000            " undo history of 1000
 set updatetime=300
 set virtualedit=onemore        " put cursor one past end of visual block
 set visualbell                 " enable visual bell
+set wildmode=longest,list
 
-function! CocSetup(info)
-  " Initial setup
-  call coc#util#install()
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-  " Install extensions on installation, update otherwise
-  if a:info.status == 'installed' || a:info.force
-    call coc#add_extension('coc-css', 'coc-emoji', 'coc-highlight', 'coc-html', 'coc-json', 'coc-prettier', 'coc-solargraph', 'coc-stylelint', 'coc-tsserver', 'coc-ultisnips', 'coc-yaml')
-  else
-    execute 'CocUpdateSync'
-  endif
-endfunction
+"colorscheme default
 
+nmap <C-CR> <Plug>(fullscreen-toggle)
 
-" ======================================================================
-" ===================== VimPlug Config =================================
-" ======================================================================
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+vmap <LeftRelease> "*ygv
+if &term =~ '256color'
+  set t_ut=
 endif
 
-call plug#begin('~/.vim/plugged')
+if (has("termguicolors"))
+  set termguicolors
+endif
 
-Plug 'airblade/vim-gitgutter'
-Plug 'ciaranm/securemodelines'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/molokai'
-Plug 'fatih/vim-go'
-Plug 'liuchengxu/eleline.vim'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': function('CocSetup')}
-Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rsi'
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" ===============
+" Filetype assignments
+" ===============
+au BufNewFile,BufRead *.dump set filetype=sql
+au BufNewFile,BufRead *.es6 set filetype=javascript
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript
+
+
+
+call plug#begin(stdpath('data') . '/plugged')
+  " color scheme
+  Plug 'joshdick/onedark.vim'
+
+  " layout
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+
+  " navigation
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'fweep/vim-zsh-path-completion'
+
+  " autocomplete
+  Plug 'hrsh7th/nvim-compe'
+
+  " language servers
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'kabouzeid/nvim-lspinstall'
+
+"  " Golang
+"  Plug 'fatih/vim-go'
+"
+"  " Ruby
+"  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rbenv'
+"  Plug 'vim-ruby/vim-ruby'
+  Plug 'slim-template/vim-slim'
+"
+"  " Javascript/Typescript
+"  Plug 'HerringtonDarkholme/yats'
+"
+"  " configuration
+"  Plug 'tpope/vim-endwise'
+"  Plug 'ludovicchabant/vim-gutentags'
+"  Plug 'tpope/vim-sensible'
+"
+"  "Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' }
+"  Plug 'vim-syntastic/syntastic'
+"  Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
-" ======================================================================
-" ================= END VimPlug Config =================================
-" ======================================================================
+colorscheme onedark
+let g:airline_theme = 'onedark'
+let g:onedark_terminal_italics=1
+let g:onedark_termcolors=256
 
 
-" ======================================================================
-" ===================== Molokai Config =================================
-" ======================================================================
-"
-colorscheme molokai
-let g:rehash256 = 1
+"" ===============
+"" NERDTree
+"" ===============
+let NERDTreeShowHidden=1
 
-" ======================================================================
-" =================== END Molokai Config ===============================
-" ======================================================================
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * wincmd p
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
 
 
-" ======================================================================
-" ====================== CtrlPConfig ===================================
-" ======================================================================
+" ===============
+" Git Gutter
+" ===============
+let g:gitgutter_grep_command = 'rg --hidden --follow --glob "!.git/*"'
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
 
+" What is this?
+let g:javascript_enable_domhtmlcss = 1
+
+
+" ===============
+" CtrlP
+" ===============
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -110,171 +169,223 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" ======================================================================
-" ================== END CtrlPConfig ===================================
-" ======================================================================
+
+" ===============
+" Compe Autocomplete
+" ===============
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.autocomplete = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable'
+let g:compe.throttle_time = 80
+let g:compe.source_timeout = 200
+let g:compe.resolve_timeout = 800
+let g:compe.incomplete_delay = 400
+let g:compe.max_abbr_width = 100
+let g:compe.max_kind_width = 100
+let g:compe.max_menu_width = 100
+let g:compe.documentation = v:true
+
+let g:compe.source = {}
+let g:compe.source.path = v:true
+let g:compe.source.buffer = v:true
+let g:compe.source.calc = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.nvim_lua = v:true
+let g:compe.source.vsnip = v:true
+let g:compe.source.ultisnips = v:true
+let g:compe.source.luasnip = v:true
+let g:compe.source.emoji = v:true
+
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+lua <<EOF
+local t = function(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+local check_back_space = function()
+    local col = vim.fn.col('.') - 1
+    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+end
+
+-- Use (s-)tab to:
+--- move to prev/next item in completion menuone
+--- jump to prev/next snippet's placeholder
+_G.tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-n>"
+  elseif vim.fn['vsnip#available'](1) == 1 then
+    return t "<Plug>(vsnip-expand-or-jump)"
+  elseif check_back_space() then
+    return t "<Tab>"
+  else
+    return vim.fn['compe#complete']()
+  end
+end
+_G.s_tab_complete = function()
+  if vim.fn.pumvisible() == 1 then
+    return t "<C-p>"
+  elseif vim.fn['vsnip#jumpable'](-1) == 1 then
+    return t "<Plug>(vsnip-jump-prev)"
+  else
+    -- If <S-Tab> is not working in your terminal, change it to <C-h>
+    return t "<S-Tab>"
+  end
+end
+
+vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+EOF
 
 
-" ======================================================================
-" ===================== Eleline Config =================================
-" ======================================================================
+" ===============
+" Language Servers
+" ===============
 
-let g:eleline_powerline_fonts = 1
+" lsp-auto-install config
+lua <<EOF
+local function setup_servers()
+  require'lspinstall'.setup()
+  local servers = require'lspinstall'.installed_servers()
+  for _, server in pairs(servers) do
+    require'lspconfig'[server].setup{}
+  end
+end
 
-" ======================================================================
-" =================== END Eleline Config ===============================
-" ======================================================================
+setup_servers()
+
+-- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
+require'lspinstall'.post_install_hook = function ()
+  setup_servers() -- reload installed servers
+  vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+end
+EOF
 
 
-" ======================================================================
-" ===================== vim-go Config ==================================
-" ======================================================================
+" ===============
+" Remove trailing spaces
+" ===============
+if has('nvim')
+else
+  autocmd FileType c autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType cpp autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType javascript autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType typescript autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType javascript.jsx autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType perl autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType java autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType php autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType go autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType rst autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType clojure autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType diff autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType erlang autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType elixir autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType json autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType grub autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType make autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType r autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType sass autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType scss autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType sh autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType sshconfig autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType sql autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType vim autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType zsh autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType xml autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+endif
 
-let g:go_fmt_fail_silently = 1
-let g:go_addtags_transform = "camelcase"
-let g:go_metalinter_autosave = 1
-let g:go_fmt_command = "goimports"
 
-" ======================================================================
-" =================== END vim-go Config ================================
-" ======================================================================
+" ===============
+" GUI options
+" ===============
 
 
-"" ======================================================================
-"" ===================== CoC Coqueror of Completion Config ==============
-"" ======================================================================
 
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-command! -nargs=0 PrettierAsync :call CocAction('runCommand', 'prettier.formatFile')
 
-augroup coc_setup
-  autocmd!
+" ===============
+" File extension / type associations
+" ===============
 
-  " Close preview window when completion is done
-  autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-augroup END
+autocmd BufNewFile,BufRead *.pgsql setlocal filetype=sql
 
-augroup automake
-  autocmd!
-
-  " COC handles auto-linting . Setup formatting via prettier
-  autocmd BufWritePre *.js,*.json,*.ts Prettier
-augroup END
-
-" Trigger completion via same as omni-completion
-inoremap <silent><expr> <C-x><C-o> coc#refresh()
-
-nnoremap <silent> <leader>lk <Plug>(coc-action-doHover)
-
-" Note: These do not work with `noremap`
-nmap <leader>lc <Plug>(coc-references)
-nmap <leader>ld <Plug>(coc-definition)
-nmap <leader>li <Plug>(coc-implementation)
-nmap <leader>lr <Plug>(coc-rename)
-nmap <leader>ls <Plug>(coc-documentSymbols)
-nmap <leader>lt <Plug>(coc-type-definition)
-
-vmap <leader>lf <Plug>(coc-format-selected)
-nmap <leader>lf <Plug>(coc-format-selected)
-
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Navigation snippet sections with C-j/k
-let g:coc_snippet_next = '<C-j>'
-let g:coc_snippet_prev = '<C-k>'
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-"" Use `[g` and `]g` to navigate diagnostics
-"nmap <silent> [g <Plug>(coc-diagnostic-prev)
-"nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"" ===============
+"" Airline
+"" ===============
+"let g:airline_powerline_fonts = 1
 "
-"" Remap keys for gotos
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
 "
-"" Use K to show documentation in preview window
-"nnoremap <silent> K :call <SID>show_documentation()<CR>
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
 "
-"function! s:show_documentation()
-"  if (index(['vim','help'], &filetype) >= 0)
-"    execute 'h '.expand('<cword>')
-"  else
-"    call CocAction('doHover')
-"  endif
-"endfunction
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
+"let g:airline#extensions#ale#enabled = 1
 "
-"" Highlight symbol under cursor on CursorHold
-""autocmd CursorHold * silent call CocActionAsync('highlight')
 "
-"" Remap for rename current word
-"nmap <leader>rn <Plug>(coc-rename)
+"" ===============
+"" Gutentags
+"" ===============
+"set statusline+=%{gutentags#statusline()}
 "
-"" Remap for format selected region
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
 "
-"augroup mygroup
-"  autocmd!
-"  " Setup formatexpr specified filetype(s).
-"  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-"  " Update signature help on jump placeholder
-"  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-"augroup end
+"" ===============
+"" uyntastic
+"" ===============
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 "
-"" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-"xmap <leader>a  <Plug>(coc-codeaction-selected)
-"nmap <leader>a  <Plug>(coc-codeaction-selected)
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 "
-"" Remap for do codeAction of current line
-"nmap <leader>ac  <Plug>(coc-codeaction)
-"" Fix autofix problem of current line
-"nmap <leader>qf  <Plug>(coc-fix-current)
 "
-"" Create mappings for function text object, requires document symbols feature of languageserver.
-"xmap if <Plug>(coc-funcobj-i)
-"xmap af <Plug>(coc-funcobj-a)
-"omap if <Plug>(coc-funcobj-i)
-"omap af <Plug>(coc-funcobj-a)
-"
-""" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-""nmap <silent> <C-d> <Plug>(coc-range-select)
-""xmap <silent> <C-d> <Plug>(coc-range-select)
-"
-"" Use `:Format` to format current buffer
-"command! -nargs=0 Format :call CocAction('format')
-"
-"" Use `:Fold` to fold current buffer
-"command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-"
-"" use `:OR` for organize import of current buffer
-"command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-"
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-"" ======================================================================
-"" ================= END CoC Coqueror of Completion Config ==============
-"" ======================================================================
+"" ===============
+"" Vim-Go
+"" ===============
+"let g:go_def_mapping_enabled = 0
+"let g:go_fmt_command = '~/Development/golang/bin/goimports'
+"let g:go_fmt_fail_silently = 0
+"let g:go_term_enabled = 1
+"autocmd FileType go setlocal shiftwidth=2 tabstop=2 softtabstop=2 noexpandtab
+"autocmd FileType go nmap <buffer> <leader>r <plug>(go-run)
+"autocmd FileType go nmap <buffer> <leader>b <plug>(go-build)
+"autocmd FileType go nmap <buffer> <leader>t <plug>(go-test)
+"autocmd FileType go nmap <buffer> <leader>e <plug>(go-rename)
+"autocmd FileType go nmap <buffer> gd <plug>(go-def-vertical)
+"autocmd FileType go nmap <buffer> <c-]> <plug>(go-def-vertical)
+"autocmd FileType go nmap <buffer> <leader>i <plug>(go-info)
+
+

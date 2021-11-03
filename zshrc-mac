@@ -4,7 +4,7 @@ export PATH="/usr/local/opt/qt/bin:/usr/local/opt/python/libexec/bin:${PATH}"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-/usr/local/MacGPG2/bin/gpgconf --launch gpg-agent
+#/usr/local/MacGPG2/bin/gpgconf --launch gpg-agent
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
