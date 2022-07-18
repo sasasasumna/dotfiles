@@ -17,3 +17,4 @@ else
   source $DOTFILES_DIR/zshrc-linux
 fi
 
+test -e /Users/adam/.iterm2_shell_integration.zsh && source /Users/adam/.iterm2_shell_integration.zsh || true
