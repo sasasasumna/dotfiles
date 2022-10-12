@@ -33,7 +33,7 @@ ln -sf ~/.dotfiles/package.json ~/.config/yarn/global/
 
 rm -f ~/.bash_profile
 ln -sf ~/.dotfiles/zshrc-common ~/.zshrc
-ln -sf ~/.dotfiles/profile ~/.zshenv
+ln -sf ~/.dotfiles/profile ~/.profile
 mkdir -p ~/.config/plasma-workspace/env
 ln -sf ~/.dotfiles/profile ~/.config/plasma-workspace/env/profile.sh
 
