@@ -1,4 +1,0 @@
-export PATH="/usr/local/heroku/bin:$PATH"
-
-eval `keychain --eval --agents ssh id_rsa`
-

@@ -11,7 +11,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git)
 
 fpath+=$HOME/.zfunc
-#source $HOME/.profile
+source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
 
 if command -v sw_vers > /dev/null; then
@@ -20,3 +20,4 @@ else
   source $DOTFILES_DIR/zshrc-linux
 fi
 
+source /opt/ros/noetic/setup.zsh

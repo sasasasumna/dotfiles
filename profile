@@ -50,7 +50,7 @@ if command -v rustup > /dev/null 2>&1; then
   rustup completions zsh rustup > /tmp/completions && source /tmp/completions && rm /tmp/completions
 fi
 
-#export PATH="$(yarn global bin):$PATH"
+export PATH="$(yarn global bin):$PATH"
 
 source $HOME/.secrets
 source $DOTFILES_DIR/aliases
