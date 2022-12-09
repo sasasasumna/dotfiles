@@ -20,4 +20,3 @@ else
   source $DOTFILES_DIR/zshrc-linux
 fi
 
-source /opt/ros/noetic/setup.zsh

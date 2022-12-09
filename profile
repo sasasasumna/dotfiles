@@ -3,7 +3,7 @@ export DEVELOPMENT_DIR="$HOME/Development"
 
 # SDK directories
 export RBENV_ROOT="$HOME/.rbenv"
-export GOPATH="$DEVELOPMENT_DIR/golang"
+#export GOPATH="$DEVELOPMENT_DIR/golang"
 export PYENV_ROOT="$HOME/.pyenv"
 export NODENV_ROOT="$HOME/.nodenv"
 
@@ -28,16 +28,18 @@ export GPG_TTY=$(tty)
 
 export PATH="$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
-if command -v rbenv > /dev/null; then
-  eval "$(rbenv init -)"
+if command -v $RBENV_ROOT/bin/rbenv > /dev/null; then
+  eval "$($RBENV_ROOT/bin/rbenv init -)"
 fi
 
-if command -v pyenv > /dev/null 2>&1; then
+if command -v $PYENV_ROOT/bin/pyenv > /dev/null 2>&1; then
+  export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+  #eval "$($PYENV_ROOT/bin/pyenv virtualenv-init -)"
 fi
 
-if command -v nodenv > /dev/null 2>&1; then
+if command -v $NODENV_ROOT/bin/nodenv > /dev/null 2>&1; then
+  export PATH="$NODENV_ROOT/bin:$PATH"
   eval "$(nodenv init -)"
 fi
 
