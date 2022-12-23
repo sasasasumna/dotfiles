@@ -3,7 +3,6 @@ export DEVELOPMENT_DIR="$HOME/Development"
 
 # SDK directories
 export RBENV_ROOT="$HOME/.rbenv"
-#export GOPATH="$DEVELOPMENT_DIR/golang"
 export PYENV_ROOT="$HOME/.pyenv"
 export NODENV_ROOT="$HOME/.nodenv"
 
@@ -24,7 +23,9 @@ export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ZSH="$HOME/.oh-my-zsh"
 export GPG_TTY=$(tty)
 
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+if command -v /opt/homebrew/bin/brew > /dev/null; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 export PATH="$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
@@ -52,7 +53,7 @@ if command -v rustup > /dev/null 2>&1; then
   rustup completions zsh rustup > /tmp/completions && source /tmp/completions && rm /tmp/completions
 fi
 
-export PATH="$(yarn global bin):$PATH"
+#export PATH="$(yarn global bin):$PATH"
 
 source $HOME/.secrets
 source $DOTFILES_DIR/aliases
