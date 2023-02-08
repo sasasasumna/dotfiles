@@ -6,6 +6,7 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/coc
 mkdir -p ~/.config/yarn/global
 mkdir -p ~/.zfunc
+mkdir -p ~/.ssh
 
 ln -sf ~/.dotfiles/aliases ~/.aliases
 ln -sf ~/.dotfiles/bundleconfig ~/.bundle/config
@@ -23,6 +24,7 @@ ln -sf ~/.dotfiles/.node-version ~/.node-version
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
+ln -sf ~/.dotfiles/sshconfig ~/.ssh/config
 
 ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim

@@ -20,3 +20,4 @@ else
   source $DOTFILES_DIR/zshrc-linux
 fi
 
+eval `keychain --eval --agents ssh id_rsa`
