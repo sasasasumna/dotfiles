@@ -1,0 +1,14 @@
+dynamnic_padding: true
+decorations: none
+startup_mode: Fullscreen
+
+font:
+  normal:
+    family: Hasklig
+live_config_reload: true
+shell:
+  program: wsl
+  args:
+    - -d Ubuntu
+working_directory: \\wsl$\Ubuntu\home\adam
+
