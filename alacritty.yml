@@ -1,0 +1,50 @@
+font:
+  normal:
+    family: Hasklig
+    style: Regular
+
+  bold:
+    family: Hasklig
+    style: Bold
+
+  italic:
+    family: Hasklig
+    style: Italic
+
+custom_cursor_colors: true
+
+colors:
+  primary:
+    background: '0x191919'
+    foreground: '0xeaeaea'
+
+  cursor:
+    text:   '0xf1c1c1'
+    cursor: '0xff2600'
+
+hide_cursor_when_typing: true
+
+window:
+  startup_mode: SimpleFullscreen
+
+scrolling:
+  history: 100000
+
+cursor:
+  style: Beam
+  unfocused_hollow: true
+
+env:
+  TERM: xterm-256color
+
+shell:
+  program: /opt/homebrew/bin/tmux # <- set this to the path of your tmux installation
+  args:
+    - new-session
+    - -A
+    - -D
+    - -s
+    - main
+
+
+

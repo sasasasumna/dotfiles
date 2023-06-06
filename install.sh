@@ -5,6 +5,7 @@ mkdir -p ~/.bundle
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/coc
 mkdir -p ~/.config/yarn/global
+mkdir -p ~/.config/alacritty
 mkdir -p ~/.zfunc
 mkdir -p ~/.ssh
 
@@ -25,8 +26,8 @@ ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
 ln -sf ~/.dotfiles/sshconfig ~/.ssh/config
+ln -sf ~/.dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
 ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
