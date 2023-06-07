@@ -23,7 +23,6 @@ ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
 ln -sf ~/.dotfiles/.ruby-version ~/.ruby-version
 ln -sf ~/.dotfiles/.node-version ~/.node-version
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
 ln -sf ~/.dotfiles/sshconfig ~/.ssh/config
 ln -sf ~/.dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
@@ -138,6 +137,9 @@ echo "Installing delve for go debugging"
 go get -u github.com/derekparker/delve/cmd/dlv
 
 source ~/.dotfiles/aliases
+
+# Setup Plug for NVIM
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "!!!!"
 echo "DONE"
