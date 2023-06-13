@@ -24,8 +24,8 @@ colors:
 
 hide_cursor_when_typing: true
 
-window:
-  startup_mode: SimpleFullscreen
+#window:
+#  startup_mode: SimpleFullscreen
 
 scrolling:
   history: 100000
