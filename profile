@@ -24,6 +24,8 @@ if command -v /opt/homebrew/bin/brew > /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+export SPACES_ACCESS_KEY_ID="DO006GU8R37WR2G68U6V"
+
 export PATH="$HOME/bin:$HOME/.local/bin:/opt/homebrew/opt/postgresql@15/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
 if command -v rbenv > /dev/null; then
