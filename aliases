@@ -22,6 +22,7 @@ alias staging-001-kubectl="kubectl --kubeconfig <(doctl kubernetes cluster kubec
 alias staging-emedcert="staging-001-kubectl -n staging-emedcert"
 alias staging-adak="staging-001-kubectl -n staging-adak"
 alias staging-medspal="staging-001-kubectl -n staging-medspal"
+alias staging-wingtap="staging-001-kubectl -n staging-wingtap"
 alias production-002-kubectl="kubectl --kubeconfig <(doctl kubernetes cluster kubeconfig show k8s-cluster-production-002)"
 alias test-001-kubectl="kubectl --kubeconfig <(doctl kubernetes cluster kubeconfig show k8s-cluster-test-001)"
 alias production-emedcert="production-002-kubectl -n production-emedcert"
