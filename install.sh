@@ -25,7 +25,7 @@ ln -sf ~/.dotfiles/.node-version ~/.node-version
 ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
 ln -sf ~/.dotfiles/sshconfig ~/.ssh/config
-ln -sf ~/.dotfiles/alacritty.yml ~/.config/alacritty/alacritty.yml
+ln -sf ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
