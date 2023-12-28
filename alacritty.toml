@@ -1,6 +1,3 @@
-custom_cursor_colors = true
-hide_cursor_when_typing = true
-
 [colors.cursor]
 cursor = "0xff2600"
 text = "0xf1c1c1"
