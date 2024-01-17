@@ -1,0 +1,36 @@
+custom_cursor_colors = true
+hide_cursor_when_typing = true
+
+[colors.cursor]
+cursor = "0xff2600"
+text = "0xf1c1c1"
+
+[colors.primary]
+background = "0x191919"
+foreground = "0xeaeaea"
+
+[cursor]
+style = "Beam"
+unfocused_hollow = true
+
+[env]
+TERM = "xterm-256color"
+
+[font.bold]
+family = "Hasklig"
+style = "Bold"
+
+[font.italic]
+family = "Hasklig"
+style = "Italic"
+
+[font.normal]
+family = "Hasklig"
+style = "Regular"
+
+[scrolling]
+history = 100000
+
+[shell]
+args = ["new-session", "-A", "-D", "-s", "main"]
+program = "/opt/homebrew/bin/tmux"
