@@ -28,6 +28,7 @@ alias test-001-kubectl="kubectl --kubeconfig <(doctl kubernetes cluster kubeconf
 alias production-emedcert="production-002-kubectl -n production-emedcert"
 alias production-angelfire="production-002-kubectl -n production-angelfiregaming"
 alias production-pocket="production-002-kubectl -n production-pocket"
+alias production-angelfire="production-002-kubectl -n production-angelfiregaming"
 alias production-nb44="production-002-kubectl -n production-nb44"
 alias production-precision-approach="production-002-kubectl -n production-precision-approach"
 alias staging-nb44="staging-001-kubectl -n staging-nb44"
