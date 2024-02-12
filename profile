@@ -10,7 +10,8 @@ export LANGUAGE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export RACK_ENV="development"
 export RAILS_ENV="$RACK_ENV"
-export TZ="America/Los_Angeles"
+export TZ="America/New_York"
+export RUBY_YJIT_ENABLE=1
 
 # System options
 export EDITOR="nvim"
