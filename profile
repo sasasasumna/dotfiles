@@ -12,6 +12,7 @@ export RACK_ENV="development"
 export RAILS_ENV="$RACK_ENV"
 export TZ="America/New_York"
 export RUBY_YJIT_ENABLE=1
+export DISABLE_SPRING=true
 
 # System options
 export EDITOR="nvim"
