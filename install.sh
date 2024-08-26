@@ -32,6 +32,7 @@ ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
 ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
 ln -sf ~/.dotfiles/coc-settings.json ~/.config/coc/
 ln -sf ~/.dotfiles/package.json ~/.config/yarn/global/
+ln -sf ~/.dotfiles/zed.settings.json ~/.config/zed/settings.json
 
 rm -f ~/.bash_profile
 ln -sf ~/.dotfiles/zshrc-common ~/.zshrc
