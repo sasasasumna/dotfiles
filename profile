@@ -65,3 +65,14 @@ source $DOTFILES_DIR/aliases
 ssh-remote-config() {
   infocmp -x | ssh -t $1 'cat > "$TERM.info" && tic -x "$TERM.info"'
 }
+
+rand64() {
+  ruby -e "require 'securerandom'; print SecureRandom.base64($1)"
+}
+
+secret64() {
+  SECRET=$(rand64 $1)
+  echo "RAW: $SECRET"
+  echo "ENC: $(echo $SECRET | base64)"
+}
+

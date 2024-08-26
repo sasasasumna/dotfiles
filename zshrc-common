@@ -1,18 +1,19 @@
 
-#eval "$(ssh-agent)"
-#ssh-add -K ~/.ssh/id_rsa 2>&1 > /dev/null
-
 DOTFILES_DIR=${HOME}/.dotfiles
 ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="clean"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
+
 plugins=(git)
 
 fpath+=$HOME/.zfunc
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
+
+eval `keychain --eval --agents ssh id_rsa`
 
 if command -v sw_vers > /dev/null; then
   source $DOTFILES_DIR/zshrc-mac
@@ -20,4 +21,3 @@ else
   source $DOTFILES_DIR/zshrc-linux
 fi
 
-eval `keychain --eval --agents ssh id_rsa`
