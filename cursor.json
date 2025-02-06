@@ -1,5 +1,14 @@
 {
-    "window.commandCenter": 1,
+    "window.commandCenter": true,
     "editor.fontFamily": "'Hasklug Nerd Font Mono'",
-    "editor.fontLigatures": true 
+    "editor.fontLigatures": true,
+    "files.autoSave": "onFocusChange",
+    "editor.tabSize": 2,
+    "editor.cursorStyle": "line-thin",
+    "editor.wordWrap": "wordWrapColumn",
+    "cursor.aipreview.enabled": true,
+    "editor.cursorBlinking": "phase",
+    "editor.formatOnSave": true,
+    "diffEditor.codeLens": true,
+    "window.autoDetectColorScheme": true
 }
