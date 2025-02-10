@@ -1,7 +1,7 @@
 theme = catppuccin-mocha
 
 adjust-cell-height = 10%
-command = /bin/zsh -c "tmux new -A -s work"
+command = "tmux new -A -s work"
 copy-on-select = true
 font-family = "Hasklug Nerd Font Mono"
 font-size = 12

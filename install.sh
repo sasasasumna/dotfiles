@@ -7,6 +7,7 @@ mkdir -p ~/.config/coc
 mkdir -p ~/.config/yarn/global
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/ghostty
+mkdir -p ~/.config/zed
 mkdir -p ~/.config/Cursor/User
 mkdir -p ~/.zfunc
 mkdir -p ~/.ssh
@@ -28,7 +29,7 @@ ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
 ln -sf ~/.dotfiles/sshconfig ~/.ssh/config
 ln -sf ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
-ln -sf ~/.dotfiles/ghostty ~/.config/ghotty/config
+ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
 ln -sf ~/.dotfiles/cursor.json ~/.config/Cursor/User/settings.json
 
 
