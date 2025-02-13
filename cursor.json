@@ -1,14 +1,110 @@
 {
     "window.commandCenter": true,
-    "editor.fontFamily": "'Hasklug Nerd Font Mono'",
-    "editor.fontLigatures": true,
-    "files.autoSave": "onFocusChange",
-    "editor.tabSize": 2,
     "editor.cursorStyle": "line-thin",
-    "editor.wordWrap": "wordWrapColumn",
     "cursor.aipreview.enabled": true,
     "editor.cursorBlinking": "phase",
     "editor.formatOnSave": true,
     "diffEditor.codeLens": true,
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": true,
+    "git.openRepositoryInParentFolders": "always",
+    "editor.fontFamily": "Hasklig",
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 2,
+    "rubyLsp.rubyVersionManager": {
+        "identifier": "rbenv"
+    },
+    "rubyLsp.enabledFeatures": {
+        "codeLens": true,
+        "definition": true,
+        "signatureHelp": true,
+        "workspaceSymbol": true,
+        "codeActions": true,
+        "diagnostics": true,
+        "documentHighlights": true,
+        "documentLink": true,
+        "documentSymbols": true,
+        "foldingRanges": true,
+        "formatting": true,
+        "hover": true,
+        "inlayHint": true,
+        "onTypeFormatting": true,
+        "selectionRanges": true,
+        "semanticHighlighting": true,
+        "completion": true
+    },
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.insertSpaces": true,
+        "editor.semanticHighlighting.enabled": true,
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "editor.rulers": [
+            120
+        ]
+    },
+    "redhat.telemetry.enabled": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.rulers": [
+        120
+    ],
+    "editor.minimap.enabled": false,
+    "editor.inlineSuggest.enabled": true,
+    "prettier.documentSelectors": [
+        "*.rb",
+        "*.js",
+        "*.jsx",
+        "*.ts"
+    ],
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "rubyLsp.formatter": "rubocop",
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Spinel",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cursor.cpp.disabledLanguages": [
+        "yaml",
+        "plaintext",
+        "markdown",
+        "csv",
+        "untitled"
+    ],
+    "accessibility.dimUnfocused.enabled": true,
+    "[jsonc]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "ruby.useBundler": true,
+    "ruby.format": false,
+    "githubPullRequests.pullBranch": "never",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
+    "cursor.cpp.enablePartialAccepts": true,
+    "rubyLsp.featureFlags": {
+        "all": true
+    },
+    "workbench.preferredDarkColorTheme": "Spinel"
 }
