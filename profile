@@ -15,7 +15,7 @@ export RUBY_YJIT_ENABLE=1
 export DISABLE_SPRING=true
 
 # System options
-export EDITOR="nvim"
+export EDITOR="vim"
 export VISUAL=$EDITOR
 export VIM_CONFIG="$HOME/.vim"
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
