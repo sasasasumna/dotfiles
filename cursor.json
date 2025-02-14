@@ -92,4 +92,11 @@
     "all": true
   },
   "workbench.preferredDarkColorTheme": "Spinel",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorStyleInactive": "line",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontLigatures": true,
+  "terminal.integrated.fontFamily": "Hasklug Nerd Font Mono",
+  "terminal.integrated.gpuAcceleration": "on",
 }
