@@ -1,15 +1,12 @@
 #!/bin/bash
 
-for line in `doctl registry repository list | tail -n +2`; do
-  REPOSITORY="$(echo $line | awk '{print $1}')"
-  if [[ $REPOSITORY == staging-* ]]; then
-    MANIFESTS="$(doctl registry repository list-manifests $REPOSITORY | grep -v latest | tail -n +3 | awk '{print $1}')"
-    if [[ ${#MANIFESTS} -gt 1 ]]; then
-        echo -n "Deleting $(echo $MANIFESTS | wc -w | awk '{print $1}') old manifest(s) from ${REPOSITORY}..."
-	doctl registry repository delete-manifest -f $REPOSITORY $MANIFESTS
-        echo "Done!"
-    else
-        echo "Skipping ${REPOSITORY}"
-    fi
+for REPOSITORY in `doctl registry repository list | tail -n +2 | awk '{print $1}'`; do
+  MANIFESTS="$(doctl registry repository list-manifests $REPOSITORY | grep -v latest | tail -n +3 | awk '{print $1}')"
+  if [[ ${#MANIFESTS} -gt 1 ]]; then
+    echo -n "Deleting $(echo $MANIFESTS | wc -w | awk '{print $1}') old manifest(s) from ${REPOSITORY}..."
+    doctl registry repository delete-manifest -f $REPOSITORY $MANIFESTS
+    echo "Done!"
+  else
+    echo "Skipping ${REPOSITORY}"
   fi
 done
