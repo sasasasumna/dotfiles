@@ -10,27 +10,35 @@
   "editor.fontFamily": "Hasklig",
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
-  "rubyLsp.rubyVersionManager": {
-    "identifier": "rbenv"
-  },
-  "rubyLsp.enabledFeatures": {
-    "codeLens": true,
-    "definition": true,
-    "signatureHelp": true,
-    "workspaceSymbol": true,
-    "codeActions": true,
-    "diagnostics": true,
-    "documentHighlights": true,
-    "documentLink": true,
-    "documentSymbols": true,
-    "foldingRanges": true,
-    "formatting": true,
-    "hover": true,
-    "inlayHint": true,
-    "onTypeFormatting": true,
-    "selectionRanges": true,
-    "semanticHighlighting": true,
-    "completion": true
+  "rubyLsp": {
+    "bundleGemFile": "./Gemfile",
+    "customRubyCommand": "ruby",
+    "featureFlags": {
+      "all": true
+    },
+    "formatter": "auto",
+    "rubyVersionManager": {
+      "identifier": "none"
+    },
+    "enabledFeatures": {
+      "codeLens": true,
+      "definition": true,
+      "signatureHelp": true,
+      "workspaceSymbol": true,
+      "codeActions": true,
+      "diagnostics": true,
+      "documentHighlights": true,
+      "documentLink": true,
+      "documentSymbols": true,
+      "foldingRanges": true,
+      "formatting": true,
+      "hover": true,
+      "inlayHint": true,
+      "onTypeFormatting": true,
+      "selectionRanges": true,
+      "semanticHighlighting": true,
+      "completion": true
+    },
   },
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
@@ -65,7 +73,6 @@
   ],
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
-  "rubyLsp.formatter": "rubocop",
   "editor.fontLigatures": true,
   "workbench.colorTheme": "Spinel",
   "[javascriptreact]": {
@@ -103,9 +110,6 @@
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 120,
   "cursor.cpp.enablePartialAccepts": true,
-  "rubyLsp.featureFlags": {
-    "all": true
-  },
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorStyleInactive": "line",
@@ -115,5 +119,5 @@
   "terminal.integrated.gpuAcceleration": "on",
   "git.path": "/home/adam/.nix-profile/bin/git",
   "explorer.confirmDelete": false,
-  "makefile.configureOnOpen": true
+  "makefile.configureOnOpen": true,
 }
