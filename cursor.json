@@ -50,9 +50,7 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.rulers": [
-      120
-    ]
+    "editor.rulers": [120]
   },
   "redhat.telemetry.enabled": false,
   "[json]": {
@@ -60,17 +58,10 @@
   },
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "editor.rulers": [
-    120
-  ],
+  "editor.rulers": [120],
   "editor.minimap.enabled": false,
   "editor.inlineSuggest.enabled": true,
-  "prettier.documentSelectors": [
-    "*.rb",
-    "*.js",
-    "*.jsx",
-    "*.ts"
-  ],
+  "prettier.documentSelectors": ["*.rb", "*.js", "*.jsx", "*.ts"],
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "editor.fontLigatures": true,
@@ -89,13 +80,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cursor.cpp.disabledLanguages": [
-    "yaml",
-    "plaintext",
-    "markdown",
-    "csv",
-    "untitled"
-  ],
+  "cursor.cpp.disabledLanguages": ["yaml", "plaintext", "markdown", "csv", "untitled"],
   "accessibility.dimUnfocused.enabled": true,
   "[jsonc]": {
     "editor.quickSuggestions": {
@@ -120,4 +105,5 @@
   "git.path": "/home/adam/.nix-profile/bin/git",
   "explorer.confirmDelete": false,
   "makefile.configureOnOpen": true,
+  "workbench.preferredDarkColorTheme": "Default Dark Modern"
 }
