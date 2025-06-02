@@ -10,36 +10,6 @@
   "editor.fontFamily": "Hasklig",
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
-  "rubyLsp": {
-    "bundleGemFile": "./Gemfile",
-    "customRubyCommand": "ruby",
-    "featureFlags": {
-      "all": true
-    },
-    "formatter": "auto",
-    "rubyVersionManager": {
-      "identifier": "none"
-    },
-    "enabledFeatures": {
-      "codeLens": true,
-      "definition": true,
-      "signatureHelp": true,
-      "workspaceSymbol": true,
-      "codeActions": true,
-      "diagnostics": true,
-      "documentHighlights": true,
-      "documentLink": true,
-      "documentSymbols": true,
-      "foldingRanges": true,
-      "formatting": true,
-      "hover": true,
-      "inlayHint": true,
-      "onTypeFormatting": true,
-      "selectionRanges": true,
-      "semanticHighlighting": true,
-      "completion": true
-    },
-  },
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnSave": true,
@@ -102,8 +72,55 @@
   "terminal.integrated.fontLigatures": true,
   "terminal.integrated.fontFamily": "Hasklug Nerd Font Mono",
   "terminal.integrated.gpuAcceleration": "on",
-  "git.path": "/home/adam/.nix-profile/bin/git",
   "explorer.confirmDelete": false,
   "makefile.configureOnOpen": true,
-  "workbench.preferredDarkColorTheme": "Default Dark Modern"
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "rubyLsp.addonSettings": {
+
+  },
+  "sorbet.enabled": true,
+  "sorbet.lspConfigs": [
+    {
+      "id": "stable",
+      "name": "Sorbet",
+      "description": "Stable Sorbet Ruby IDE features",
+      "command": [
+        "bundle",
+        "exec",
+        "srb",
+        "typecheck",
+        "--lsp"
+      ]
+    // },
+    // {
+    //   "id": "beta",
+    //   "name": "Sorbet (Beta)",
+    //   "description": "Beta Sorbet Ruby IDE features",
+    //   "command": [
+    //     "bundle",
+    //     "exec",
+    //     "srb",
+    //     "typecheck",
+    //     "--lsp",
+    //     "--enable-all-beta-lsp-features"
+    //   ]
+    // },
+    // {
+    //   "id": "experimental",
+    //   "name": "Sorbet (Experimental)",
+    //   "description": "Experimental Sorbet Ruby IDE features (warning: crashy, for developers only)",
+    //   "command": [
+    //     "bundle",
+    //     "exec",
+    //     "srb",
+    //     "typecheck",
+    //     "--lsp",
+    //     "--enable-all-experimental-lsp-features"
+    //   ]
+    }
+  ],
+  "rdbg.rubyVersionManager": "rbenv",
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "rbenv"
+  }
 }
