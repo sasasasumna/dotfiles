@@ -28,7 +28,7 @@ fi
 
 export SPACES_ACCESS_KEY_ID="DO006GU8R37WR2G68U6V"
 
-export PATH="$HOME/bin:$HOME/.nodenv/bin:$HOME/.rbenv/bin:$HOME/.local/bin:/opt/homebrew/opt/postgresql@13/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.nodenv/bin:$HOME/.rbenv/bin:$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:/usr/local/bin:/usr/local/sbin:$HOME/.cargo/bin:$PATH"
 
 if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
