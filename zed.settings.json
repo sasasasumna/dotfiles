@@ -5,30 +5,54 @@
 //
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
-// command palette
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-3-5-sonnet-20240620"
+      "model": "claude-sonnet-4-latest"
     },
-    "version": "2"
+    "play_sound_when_agent_done": true
+  },
+  "autosave": "on_focus_change",
+  "edit_predictions": {
+    "mode": "eager"
   },
   "buffer_font_family": "Hasklug Nerd Font Mono",
-  "base_keymap": "VSCode",
-  "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
+  "buffer_font_size": 15,
+  "preferred_line_length": 120,
+  "project_panel": {
+    "button": true,
+    "default_width": 240,
+    "dock": "left",
+    "entry_spacing": "comfortable",
+    "file_icons": true,
+    "folder_icons": true,
+    "git_status": true,
+    "indent_size": 20,
+    "auto_reveal_entries": true,
+    "auto_fold_dirs": true,
+    "scrollbar": {
+      "show": null
+    },
+    "show_diagnostics": "all",
+    "indent_guides": {
+      "show": "always"
+    },
+    "hide_root": true
+  },
+  "scrollbar": {
+    "show": "auto"
+  },
+  "tab_size": 2,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Ayu Dark"
+    "dark": "One Dark"
   },
-  "lsp": {
-    "gopls": {
-      "initialization_options": {
-        "buildFlags": ["-tags=development,debug"]
-      }
-    }
-  }
+  "ui_font_features": {
+    "calt": true
+  },
+  "ui_font_size": 16,
+  "vim_mode": true
 }
