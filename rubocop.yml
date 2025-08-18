@@ -10,10 +10,10 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.4
 
 Style/Encoding:
   Enabled: false
 
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
