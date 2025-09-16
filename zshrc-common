@@ -13,8 +13,6 @@ fpath+=$HOME/.zfunc
 source $ZSH/oh-my-zsh.sh
 source $HOME/.profile
 
-#eval `keychain --eval --agents ssh id_rsa`
-
 if command -v sw_vers > /dev/null; then
   source $DOTFILES_DIR/zshrc-mac
 else
