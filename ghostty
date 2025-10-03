@@ -1,4 +1,4 @@
-theme = catppuccin-mocha
+#theme = catppuccin-mocha
 
 adjust-cell-height = 10%
 #command = "tmux new -A -s work"
