@@ -1,6 +1,6 @@
 export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/adam/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-export SSH_ASKPASS=ksshaskpass
-export SSH_ASKPASS_REQUIRE=prefer
+#export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+#export SSH_ASKPASS=ksshaskpass
+#export SSH_ASKPASS_REQUIRE=prefer
 
 #export VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json
