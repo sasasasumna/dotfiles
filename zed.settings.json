@@ -47,8 +47,8 @@
   "tab_size": 2,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
   },
   "ui_font_features": {
     "calt": true
