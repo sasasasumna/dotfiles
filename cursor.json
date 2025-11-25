@@ -7,7 +7,7 @@
   "diffEditor.codeLens": true,
   "window.autoDetectColorScheme": true,
   "git.openRepositoryInParentFolders": "always",
-  "editor.fontFamily": "Hasklig",
+  "editor.fontFamily": "Hasklug Nerd Font Mono",
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
   "[ruby]": {
@@ -20,7 +20,9 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.rulers": [120]
+    "editor.rulers": [
+      120
+    ]
   },
   "redhat.telemetry.enabled": false,
   "[json]": {
@@ -28,10 +30,17 @@
   },
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  "editor.rulers": [120],
+  "editor.rulers": [
+    120
+  ],
   "editor.minimap.enabled": false,
   "editor.inlineSuggest.enabled": true,
-  "prettier.documentSelectors": ["*.rb", "*.js", "*.jsx", "*.ts"],
+  "prettier.documentSelectors": [
+    "*.rb",
+    "*.js",
+    "*.jsx",
+    "*.ts"
+  ],
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "editor.fontLigatures": true,
@@ -50,7 +59,13 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cursor.cpp.disabledLanguages": ["yaml", "plaintext", "markdown", "csv", "untitled"],
+  "cursor.cpp.disabledLanguages": [
+    "yaml",
+    "plaintext",
+    "markdown",
+    "csv",
+    "untitled"
+  ],
   "accessibility.dimUnfocused.enabled": true,
   "[jsonc]": {
     "editor.quickSuggestions": {
@@ -74,10 +89,7 @@
   "terminal.integrated.gpuAcceleration": "on",
   "explorer.confirmDelete": false,
   "makefile.configureOnOpen": true,
-  "workbench.preferredDarkColorTheme": "Default Dark Modern",
-  "rubyLsp.addonSettings": {
-
-  },
+  "rubyLsp.addonSettings": {},
   "sorbet.enabled": true,
   "sorbet.lspConfigs": [
     {
@@ -91,32 +103,32 @@
         "typecheck",
         "--lsp"
       ]
-    // },
-    // {
-    //   "id": "beta",
-    //   "name": "Sorbet (Beta)",
-    //   "description": "Beta Sorbet Ruby IDE features",
-    //   "command": [
-    //     "bundle",
-    //     "exec",
-    //     "srb",
-    //     "typecheck",
-    //     "--lsp",
-    //     "--enable-all-beta-lsp-features"
-    //   ]
-    // },
-    // {
-    //   "id": "experimental",
-    //   "name": "Sorbet (Experimental)",
-    //   "description": "Experimental Sorbet Ruby IDE features (warning: crashy, for developers only)",
-    //   "command": [
-    //     "bundle",
-    //     "exec",
-    //     "srb",
-    //     "typecheck",
-    //     "--lsp",
-    //     "--enable-all-experimental-lsp-features"
-    //   ]
+      // },
+      // {
+      //   "id": "beta",
+      //   "name": "Sorbet (Beta)",
+      //   "description": "Beta Sorbet Ruby IDE features",
+      //   "command": [
+      //     "bundle",
+      //     "exec",
+      //     "srb",
+      //     "typecheck",
+      //     "--lsp",
+      //     "--enable-all-beta-lsp-features"
+      //   ]
+      // },
+      // {
+      //   "id": "experimental",
+      //   "name": "Sorbet (Experimental)",
+      //   "description": "Experimental Sorbet Ruby IDE features (warning: crashy, for developers only)",
+      //   "command": [
+      //     "bundle",
+      //     "exec",
+      //     "srb",
+      //     "typecheck",
+      //     "--lsp",
+      //     "--enable-all-experimental-lsp-features"
+      //   ]
     }
   ],
   "rdbg.rubyVersionManager": "rbenv",
