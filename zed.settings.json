@@ -1,7 +1,6 @@
 {
   "context_servers": {
     "mcp-server-github": {
-      "source": "extension",
       "enabled": true,
       "settings": {
         "github_personal_access_token": "$GITHUB_TOKEN"
