@@ -1,0 +1,19 @@
+[general]
+live_config_reload = true
+
+[font.normal]
+family = "Hasklug Nerd Font Mono"
+
+[font.bold]
+family = "Hasklug Nerd Font Mono"
+
+[font.italic]
+family = "Hasklug Nerd Font Mono"
+
+[font.bold_italic]
+family = "Hasklug Nerd Font Mono"
+
+[terminal.shell]
+program = "C:\\Windows\\System32\\wsl.exe"
+args = [ "-d", "Ubuntu", "--cd", "~" ]
+

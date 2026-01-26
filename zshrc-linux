@@ -6,3 +6,7 @@ if lsmod | grep nvidia_drm > /dev/null; then
 elif lsmod | grep amdgpu > /dev/null; then
   export VK_DRIVER_FILES=/usr/share/vulkan/icd.d/radeon_icd.x86_64.json:/usr/share/vulkan/icd.d/radeon_icd.i686.json
 fi
+
+/bin/keychain -q --nogui $HOME/.ssh/id_rsa
+
+source $(ls $HOME/.keychain/*-sh | awk '{print $1}')
