@@ -15,5 +15,5 @@ family = "Hasklug Nerd Font Mono"
 
 [terminal.shell]
 program = "C:\\Windows\\System32\\wsl.exe"
-args = [ "-d", "Ubuntu", "--cd", "~" ]
+args = [ "-d", "archlinux", "--cd", "~" ]
 

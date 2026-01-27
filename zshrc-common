@@ -19,6 +19,10 @@ else
   source $DOTFILES_DIR/zshrc-linux
 fi
 
+if command -v /usr/sbin/wsl2-ssh-agent > /dev/null; then
+  eval "$(/usr/sbin/wsl2-ssh-agent)"
+fi
+
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/src/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/src/google-cloud-sdk/path.zsh.inc'; fi
