@@ -63,7 +63,7 @@
   "vim_mode": true,
   "wsl_connections": [
     {
-      "distro_name": "Ubuntu",
+      "distro_name": "archlinux",
       "user": null,
       "projects": [
         {
