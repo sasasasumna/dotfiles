@@ -33,7 +33,6 @@ ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
 ln -sf ~/.dotfiles/cursor.json ~/.config/Cursor/User/settings.json
 ln -sf ~/.dotfiles/direnv ~/.direnvrc
 
-
 ln -sf ~/.dotfiles/vimrc ~/.config/nvim/init.vim
 ln -sf ~/.dotfiles/erdconfig ~/.erdconfig
 ln -sf ~/.dotfiles/glrnvim.yml ~/.config/glrnvim.yml
