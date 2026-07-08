@@ -1,10 +1,10 @@
 #!/bin/bash
 
-for REPOSITORY in `doctl registry repository list | tail -n +2 | awk '{print $1}'`; do
-  MANIFESTS="$(doctl registry repository list-manifests $REPOSITORY | grep -v latest | tail -n +3 | awk '{print $1}')"
+for REPOSITORY in `doctl registry repository list --registry gojilabs | tail -n +2 | awk '{print $1}'`; do
+  MANIFESTS="$(doctl registry repository list-manifests $REPOSITORY --registry gojilabs | grep -v latest | tail -n +3 | awk '{print $1}')"
   if [[ ${#MANIFESTS} -gt 1 ]]; then
     echo -n "Deleting $(echo $MANIFESTS | wc -w | awk '{print $1}') old manifest(s) from ${REPOSITORY}..."
-    doctl registry repository delete-manifest -f $REPOSITORY $MANIFESTS
+    doctl registry repository delete-manifest -f $REPOSITORY $MANIFESTS --registry gojilabs 
     echo "Done!"
   else
     echo "Skipping ${REPOSITORY}"

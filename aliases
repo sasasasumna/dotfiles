@@ -22,6 +22,10 @@ alias ber="bin/rails"
 alias berc="ber c"
 alias berd="ber d"
 alias berg="ber g"
+
+alias docker="podman"
+
+
 alias ssh="TERM=xterm-256color ssh"
 alias production-002-kubectl="kubectl --kubeconfig <(doctl kubernetes cluster kubeconfig show k8s-cluster-production-002)"
 alias production-gypsum="kubectl --kubeconfig <(doctl kubernetes cluster kubeconfig show production-gypsum-cluster-1) -n gypsum-production"

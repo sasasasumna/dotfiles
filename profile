@@ -13,6 +13,7 @@ export RAILS_ENV="$RACK_ENV"
 export TZ="America/New_York"
 export RUBY_YJIT_ENABLE=1
 export DISABLE_SPRING=true
+export CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING="1"
 
 # System options
 export EDITOR="vim"

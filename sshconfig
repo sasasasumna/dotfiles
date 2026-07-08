@@ -1,9 +1,9 @@
+Host *
+	UseKeychain yes
+	AddKeysToAgent yes
+	IdentityFile ~/.ssh/id_rsa
+
 Host bitbucket.org
   HostkeyAlgorithms +ssh-rsa
   PubkeyAcceptedAlgorithms +ssh-rsa
 
-Host staging-medspal-admin
-  HostName 64.225.110.102
-
-Host medspal-admin
-  HostName 144.126.246.186
