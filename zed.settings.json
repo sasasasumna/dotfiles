@@ -46,15 +46,15 @@
       "type": "registry",
     },
     "claude-acp": {
+      "default_config_options": {
+        "mode": "auto",
+        "effort": "high",
+        "model": "opus[1m]"
+      },
       "type": "registry",
     },
   },
   "context_servers": {
-    "mcp-server-context7": {
-      "enabled": false,
-      "remote": false,
-      "settings": {},
-    },
     "chrome-devtools-mcp-zed": {
       "enabled": true,
       "settings": {
@@ -70,9 +70,9 @@
   },
   "agent": {
     "default_model": {
-      "effort": "medium",
-      "provider": "openai-subscribed",
-      "model": "gpt-5.5",
+      "effort": "high",
+      "provider": "Rapid MLX",
+      "model": "mlx-community/Qwen3.6-35B-A3B-8bit",
       "enable_thinking": true,
     },
     "dock": "right",
@@ -133,6 +133,27 @@
   "ui_font_size": 16,
   "language_models": {
     "openai_compatible": {
+      "Rapid MLX": {
+        "api_url": "http://localhost:8000/v1",
+        "available_models": [
+          {
+            "name": "mlx-community/Qwen3.6-35B-A3B-8bit",
+            "max_tokens": 262144,
+            "max_output_tokens": 32768,
+            "max_completion_tokens": 32768,
+            "reasoning_effort": "high",
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+              "max_tokens_parameter": true
+            }
+          }
+        ]
+      },
       "llama.cpp": {
         "api_url": "http://localhost:8080/v1",
         "available_models": [
