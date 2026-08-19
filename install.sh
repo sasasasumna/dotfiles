@@ -6,6 +6,7 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/coc
 mkdir -p ~/.config/yarn/global
 mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/opencode
 mkdir -p ~/.config/ghostty
 mkdir -p ~/.config/zed
 mkdir -p ~/.config/Cursor/User
@@ -29,6 +30,7 @@ ln -sf ~/.dotfiles/prettierrc ~/.prettierrc
 ln -sf ~/.dotfiles/gemspec ~/.gemspec
 ln -sf ~/.dotfiles/sshconfig ~/.ssh/config
 ln -sf ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
+ln -sf ~/.dotfiles/opencode.json ~/.config/opencode/opencode.json
 ln -sf ~/.dotfiles/ghostty ~/.config/ghostty/config
 ln -sf ~/.dotfiles/cursor.json ~/.config/Cursor/User/settings.json
 ln -sf ~/.dotfiles/direnv ~/.direnvrc

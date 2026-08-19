@@ -39,6 +39,12 @@
   // "semantic_tokens": "combined",
   "proxy": "",
   "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "model": "mtplx/johninthepool/Qwen3.8-27B-MTPLX-bf16"
+      },
+      "type": "registry"
+    },
     "codex-acp": {
       "type": "registry",
     },
@@ -69,11 +75,16 @@
     },
   },
   "agent": {
+    "inline_assistant_model": {
+      "provider": "mtplx",
+      "effort": "minimal",
+      "model": "johninthepool/Qwen3.8-27B-MTPLX-bf16",
+      "enable_thinking": false
+    },
     "default_model": {
-      "effort": "high",
-      "provider": "Rapid MLX",
-      "model": "mlx-community/Qwen3.6-35B-A3B-8bit",
-      "enable_thinking": true,
+      "provider": "mtplx",
+      "model": "johninthepool/Qwen3.8-27B-MTPLX-bf16",
+      "enable_thinking": false,
     },
     "dock": "right",
     "show_turn_stats": true,
@@ -132,44 +143,24 @@
   ],
   "ui_font_size": 16,
   "language_models": {
-    "openai_compatible": {
-      "Rapid MLX": {
-        "api_url": "http://localhost:8000/v1",
-        "available_models": [
-          {
-            "name": "mlx-community/Qwen3.6-35B-A3B-8bit",
-            "max_tokens": 262144,
-            "max_output_tokens": 32768,
-            "max_completion_tokens": 32768,
-            "reasoning_effort": "high",
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-              "chat_completions": true,
-              "interleaved_reasoning": false,
-              "max_tokens_parameter": true
+      "openai_compatible": {
+        "mtplx": {
+          "api_url": "http://127.0.0.1:8020/v1",
+          "available_models": [
+            {
+              "name": "johninthepool/Qwen3.8-27B-MTPLX-bf16",
+              "display_name": "Qwen3.8 27B MTP (local)",
+              "max_tokens": 32768,
+              "max_output_tokens": 8192,
+              "capabilities": {
+                "tools": true,
+                "images": false,
+                "parallel_tool_calls": false,
+                "prompt_cache_key": false
+              }
             }
-          }
-        ]
-      },
-      "llama.cpp": {
-        "api_url": "http://localhost:8080/v1",
-        "available_models": [
-          {
-            "name": "gemma-4-31B-it-bf16",
-            "display_name": "Gemma 4 31B",
-            "max_tokens": 257536,
-            "capabilities": {
-              "tools": true,
-              "images": true,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-            },
-          },
-        ],
-      },
+          ]
+        }
+      }
     },
-  },
 }

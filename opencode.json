@@ -1,0 +1,16 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "mtplx": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://localhost:8020/v1"
+      },
+      "models": {
+        "johninthepool/Qwen3.8-27B-MTPLX-bf16": {
+          "name": "Qwen 3.8 27B MTPLX bf16"
+        }
+      }
+    }
+  }
+}
