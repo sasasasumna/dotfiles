@@ -1,9 +1,18 @@
 Host *
-	UseKeychain yes
-	AddKeysToAgent yes
-	IdentityFile ~/.ssh/id_rsa
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
 
 Host bitbucket.org
   HostkeyAlgorithms +ssh-rsa
   PubkeyAcceptedAlgorithms +ssh-rsa
 
+Host tower-*.precisionapproach.*
+  ProxyCommand cloudflared access ssh --hostname %h
+  User "adam"
+  IdentityFile ~/.ssh/id_rsa
+
+Host console.precisionapproach.*
+  ProxyCommand cloudflared access ssh --hostname %h
+  User "adam"
+  IdentityFile ~/.ssh/id_rsa

@@ -62,6 +62,10 @@ fi
 source $HOME/.secrets
 source $DOTFILES_DIR/aliases
 
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
 
 ssh-remote-config() {
   infocmp -x | ssh -t $1 'cat > "$TERM.info" && tic -x "$TERM.info"'

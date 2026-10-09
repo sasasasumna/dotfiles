@@ -12,18 +12,19 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 
-plugins=(git golang ssh kubectl aws gcloud podman ruby brew gem github yarn npm tmux postgres opentofu nodenv rbenv doctl bundler)
+plugins=(git golang ssh kubectl aws gcloud podman ruby brew gem gh yarn npm tmux postgres opentofu nodenv rbenv doctl bundler)
 
 fpath+=$HOME/.zfunc
-
-source $ZSH/oh-my-zsh.sh
-source $HOME/.profile
 
 if command -v sw_vers > /dev/null; then
   source $DOTFILES_DIR/zshrc-mac
 else
   source $DOTFILES_DIR/zshrc-linux
 fi
+
+source $ZSH/oh-my-zsh.sh
+source $HOME/.profile
+
 
 autoload -Uz compinit
 compinit
